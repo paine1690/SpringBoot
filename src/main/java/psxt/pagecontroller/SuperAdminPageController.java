@@ -10,7 +10,15 @@ public class SuperAdminPageController {
 		return "/psxt/superadmin/superadmin";
 	}
 	
-
+	@RequestMapping("/psxt/getaccountmanagepage")
+	public String getAccountManagePage(){
+		return "/psxt/superadmin/accountManage";
+	}
+	
+	@RequestMapping("/psxt/getprojectmanagepage")
+	public String getProjectManagePage(){
+		return "/psxt/superadmin/projectManage";
+	}
 	
 	
 }

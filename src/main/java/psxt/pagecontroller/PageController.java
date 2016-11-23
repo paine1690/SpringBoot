@@ -14,7 +14,10 @@ public class PageController {
         return "/psxt/login";
     }
     
-
+	@RequestMapping("/psxt/getshowprojectpage")
+	public String getProjectShowpage(){
+		return "/psxt/showallproject";
+	}
     
 
 }
