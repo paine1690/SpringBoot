@@ -19,9 +19,9 @@ import org.springframework.stereotype.Component;
 import org.springframework.util.StreamUtils;
 import org.springframework.web.multipart.MultipartFile;
 
-import dcnh.mapper.AttachementDBMapper;
-import dcnh.mode.Attachement;
-import dcnh.myutil.UUIGenerator;
+import psxt.mapper.AttachementDBMapper;
+import psxt.mode.Attachement;
+import psxt.myutil.UUIGenerator;
 
 @Slf4j
 @Component
@@ -75,11 +75,13 @@ public class AttachementHandler {
 				} catch (FileNotFoundException e) {
 					e.printStackTrace();
 				}
-				Attachement attachement = new Attachement();
-				attachement.setAttachementId(uuid);
-				attachement.setFilePath(path+"/"+newFileName);
-				attachementDBMapper.insertAttachementDBMapper(attachement);
-	        	return newFileName;
+//				Attachement attachement = new Attachement();
+//				attachement.setAttachementId(uuid);
+//				attachement.setFilePath(path+"/"+newFileName);
+//				attachementDBMapper.insertAttachementDBMapper(attachement);
+	        	String fileDir = path+"/"+newFileName;
+//	        	return newFileName;
+	  		    return fileDir;
 	   }
 	    
 	   private String getFileType(String filename){

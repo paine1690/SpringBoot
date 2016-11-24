@@ -31,7 +31,7 @@ public class LoginHandler {
 		}
 		String userPassword = user.getPassword();
 		System.out.println("password"+userPassword+"   "+SHA256.encode(password));
-		if(userPassword.equals(SHA256.encode(password))){
+		if(userPassword.equals(password)){
 			responseMessage.setCode(ResponseCode.SUCCESS.ordinal());
 			String href = getHref(user.getRole());
 			responseMessage.setHref(href);

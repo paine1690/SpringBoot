@@ -1,19 +1,19 @@
 function postNewProject() {
 	// 验证是否为空
-	var data = $("#mform").serializeArray();
-	console.log($("#mform").serializeArray());
-	for ( var index in data) {
-		var formItem = data[index];
-		if ((formItem.name == "category" && formItem.value == "----选择一级分类----")
-				|| (formItem.name == "subcategory" && formItem.value == "----选择二级分类----")) {
-			modalAlert("请选项目类别！");
-			return;
-		}
-		if (formItem.value == "") {
-			modalAlert("请检查字段不能为空！");
-			return;
-		}
-	}
+//	var data = $("#mform").serializeArray();
+//	console.log($("#mform").serializeArray());
+//	for ( var index in data) {
+//		var formItem = data[index];
+//		if ((formItem.name == "category" && formItem.value == "----选择一级分类----")
+//				|| (formItem.name == "subcategory" && formItem.value == "----选择二级分类----")) {
+//			modalAlert("请选项目类别！");
+//			return;
+//		}
+//		if (formItem.value == "") {
+//			modalAlert("请检查字段不能为空！");
+//			return;
+//		}
+//	}
 	console.log($("#attachementId").val() + "hhhhhhh" );
 	if($("#attachementId").val() == "") {
 		modalAlert("请上传附件！");
@@ -32,6 +32,8 @@ function postNewProject() {
 	*/
 //	console.log(participatorsArray);
 	
+	// 获取userID
+	console.log("userId:::" + userId);
 	$.ajax({
 		url:"/psxt/addnewproject",
 		type:"POST",
@@ -43,7 +45,8 @@ function postNewProject() {
 //			teacher:$("#teacher").val(),
 //			prjct_title:$("#prjct_title").val(),
 //			participators:participatorsArray,
-			attachement_id:$("#attachementId").val()
+			attachement_id:$("#attachementId").val(),
+			userId : userId
 		},
 		success:function(data) {
 			//清空，附件ID

@@ -142,12 +142,14 @@
 
 </body>
 <script>
+var userId;
 	function onload(){
 		  $.ajax({
-		      url: '/dcnh/getuserinfo',
+		      url: '/psxt/getuserinfo',
 		      type: 'get',
 		      dataType: 'json',
 		      success: function(data){
+		    	  userId = data.id;
 		    	  $("#userName").html(data.userName+" 欢迎您");
 		      }
 		    });
@@ -186,6 +188,7 @@
 		$("#attachement_file").on("fileuploaded", function(event, data, previewId, index) {
 			var rep = data.response;
 			console.log("response  "+rep);
+			console.log("responseMessage  "+rep.message);
 			if(rep == null || rep.code == "1") {
 				modalAlert("附件上传失败，请重新尝试！" + rep.message);
 				return;
