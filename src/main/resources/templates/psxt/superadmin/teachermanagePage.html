@@ -1,5 +1,5 @@
 <div>
- 	  <button  type="button" class="btn btn-success" onclick="setCreateaccountPage()">添加账户</button>
+ 	  <button  type="button" class="btn btn-success" onclick="getCreateaccountPage()">添加账户</button>
 
 	   <button type="button" class="btn btn-success" onclick="showAllUser()">查看已有账户</button> 
 
@@ -10,43 +10,51 @@
 
 <script>
 
-var userList = [ {
-	id : "id",
-	userName : "userName",
-	school : "school",
-	password : "password",
-} ];
+	function getCreateaccountPage() {
+		$.ajax({
+			url : '/psxt/getcreateaccountpage',
+			type : 'get',
+			dataType : 'text',
+			success : function(data) {
+				$("#show").html(data);
+			}
+		});
+	}
 
+	var userList = [ {
+		id : "id",
+		userName : "userName",
+		school : "school",
+		password : "password",
+	} ];
 
+	function showAllUser() {
+		$.ajax({
+			url : '/psxt/getTeacherAccountPage',
+			type : 'get',
+			dataType : 'text',
+			success : function(data) {
+				$("#show").html(data);
+				showUser = new Vue({
+					el : '#userTable',
+					data : {
+						userList : list
+					},
+				});
+				showAllAccount();
+			}
 
-function showAllUser() {
-	$.ajax({
-		url : '/psxt/getTeacherAccountPage',
-		type : 'get',
-		dataType : 'text',
-		success : function(data) {
-			$("#show").html(data);
-			showUser = new Vue({
-				el : '#userTable',
-				data : {
-					userList : list
-				},
-			});
-			showAllAccount();
-		}
-		
-	});
-}
+		});
+	}
 
-function showAllAccount(){
-	$.ajax({
-		url : '/dcnh/getAllTeacherAccount',
-		type : 'get',
-		dataType : 'json',
-		success : function(data) {
-			showUser.userList = data;
-		}
-	});
-}
-
+	function showAllAccount() {
+		$.ajax({
+			url : '/dcnh/getAllTeacherAccount',
+			type : 'get',
+			dataType : 'json',
+			success : function(data) {
+				showUser.userList = data;
+			}
+		});
+	}
 </script>

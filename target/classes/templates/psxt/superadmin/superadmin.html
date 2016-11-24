@@ -28,84 +28,68 @@
     <body onload="onload()">
 		<div id="basecontent">	
        
-        <nav class="navbar navbar-inverse navbar-fixed-top">
-		      <div class="container-fluid">
-		        <div class="navbar-header">
-		          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
 		            <span class="sr-only">Toggle navigation</span>
 		            <span class="icon-bar"></span>
 		            <span class="icon-bar"></span>
 		            <span class="icon-bar"></span>
-		          </button>
-		          <a class="navbar-brand" href="/dcnh"><b>辽宁省创新创业网</b></a>
-		        </div>
+					</button>
+					<a class="navbar-brand" href="/dcnh"><b>辽宁省创新创业网</b></a>
+				</div>
 		        <div id="navbar" class="navbar-collapse collapse">
-		          <ul class="nav navbar-nav navbar-right">
-		             
-		          <li><a id="userName" href="#"></a></li> 
-		            <li><a href="/logout">退出</a></li>
-		          </ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a id="userName" href="#"></a></li> 
+		            	<li><a href="/logout">退出</a></li>
+		          	</ul>
 		        </div>
-		      </div>
-    	</nav>
+			</div>
+		</nav>
     
 
-<div class="container-fluid ">
-    <div class="row ">
-        <div class="col-sm-3 col-md-2 sidebar">	  
+	<div class="container-fluid ">
+    	<div class="row ">
+        	<div class="col-sm-3 col-md-2 sidebar">	 
+				<div class="menu-list" style="height: 820px">
+			
+					<a href="#" onclick="showSchoolAccount()" class="menu-button-middle">
+						<span class="glyphicon glyphicon-th-large ">&nbsp;学校账户管理</span>
+					</a>
+					
+					<a href="#" onclick="showTeachermanagePage()" class="menu-button-middle">
+						<span class="glyphicon glyphicon-th-large ">&nbsp;专家账户管理</span>
+					</a>
+					
+					
+					<a href="#" onclick="showProjectpage()" class="menu-button-middle">
+						<span class="glyphicon glyphicon-th-large">&nbsp;查看项目</span>
+					</a>			
+					
+					<a href="#" onclick="showProjectManagepage()" class="menu-button-middle">
+						<span class="glyphicon glyphicon-th-large">&nbsp;项目分配</span>
+					</a>	
+				</div>
+ 	 		</div>
 
-		<div class="menu-list" style="height: 820px">
-			
-			<a href="#" onclick="showSchoolAccount()" class="menu-button-middle">
-				<span class="glyphicon glyphicon-th-large ">&nbsp;学校账户管理</span>
-			</a>
-			
-			<a href="#" onclick="showTeachermanagePage()" class="menu-button-middle">
-				<span class="glyphicon glyphicon-th-large ">&nbsp;专家账户管理</span>
-			</a>
-			
-			
-			<a href="#" onclick="showProjectpage()" class="menu-button-middle">
-				<span class="glyphicon glyphicon-th-large">&nbsp;查看项目</span>
-			</a>			
-			
-			<a href="#" onclick="showProjectManagepage()" class="menu-button-middle">
-				<span class="glyphicon glyphicon-th-large">&nbsp;项目分配</span>
-			</a>				
-			
-			<!-- <a href="#" class="menu-button-middle" onclick="getResultSettingPage()">
-				<span class="glyphicon glyphicon-th">&nbsp;结果导出</span>
-			</a> 
-				
-		   	<a href="#" class="menu-button-middle">
-		   		<span class="glyphicon glyphicon glyphicon-user">&nbsp;个人信息</span>
-		   	</a> -->
-	</div>
-
-
-	  </div>
-	
-	  <div id="contains" class="col-sm-9 col-md-10 sidebar" >
-	   <button  type="button" class="btn btn-success" onclick="setCreateaccountPage()">添加账户</button>
-	   <button type="button" class="btn btn-success" onclick="showUserInfo()">查看已有账户</button>
-	    <select id="permission" class="selectpicker">
-	     <option>校级管理员</option>
-		  <option>专家账户</option>
-		  <option>系统管理员</option>
-		</select>
-	   <div id="show">
-	   </div>
-	   
-	  </div>
-	
-	</div>
+		  	<div id="contains" class="col-sm-9 col-md-10 sidebar" >
+		   		<button  type="button" class="btn btn-success" >欢迎使用</button>
+				<div id="show">
+				</div>
+		   
+			</div>
+		</div>
 	</div>
 </div> 
-
-
-
 </body>
+
+
 <script>
+
+
+
+	//part2
 	function showTeachermanagePage() {
 		$.ajax({
 			url : '/psxt/showTeachermanagePage',
@@ -116,8 +100,6 @@
 			}
 		});
 	}
-	
-	
 
 	//part1
 	var accountList = [ {

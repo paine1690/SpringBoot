@@ -2,6 +2,7 @@ package psxt.mapper;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Result;
 import org.apache.ibatis.annotations.Results;
@@ -45,4 +46,9 @@ public interface UserDBMapper {
 	@Update("update user_table set userName=#{userName},password=#{password},remark=#{remark} where id=#{id};")
 	public boolean changeNameOrPassworORemark(@Param("id") int id,@Param("userName") String userName, @Param("password") String password, @Param("remark") String remark);
 	
+	
+	@Insert("INSERT INTO `user_table` (`userName`, `password`, `remark`, `role`) "
+			+ "VALUES (#{userName}, #{password}, #{remark}, #{role});")
+	public boolean addNewAccount(@Param("userName") String userName, @Param("password") String password, @Param("remark") String remark, @Param("role") int role);
+		
 }

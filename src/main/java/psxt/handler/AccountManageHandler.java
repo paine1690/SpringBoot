@@ -20,7 +20,7 @@ public class AccountManageHandler {
 		return userDBService.getUsersByRole(2);
 	}
 	
-	
+	//获取所有专家账号
 	public List<User> getAllTeacherAccount(){
 		return userDBService.getUsersByRole(3);
 	}
@@ -34,5 +34,10 @@ public class AccountManageHandler {
 	//修改账号用户名或密码或备注
 	public ResponseMessage changeNameOrPassworORemark(int id, String userName, String password, String remark){
 		return userDBService.changeNameOrPassworORemark(id, userName, password, remark);
+	}
+	
+	//新增专家用户
+	public ResponseMessage addNewTeacherAccount(String userName, String password, String remark){
+		return userDBService.addNewAccount(userName, password, remark, 3);		
 	}
 }

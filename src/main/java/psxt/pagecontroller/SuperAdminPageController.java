@@ -29,7 +29,12 @@ public class SuperAdminPageController {
 		return "/psxt/superadmin/teacherAccountPage";
 	}
 	
-	
+
+	//获取专家账户生成页面
+	@RequestMapping("/psxt/getcreateaccountpage")
+	public String getcreateaccountpage(){
+		return "/psxt/superadmin/createaccountpage";
+	}
 	
 	@RequestMapping("/psxt/getaccountmanagepage")
 	public String getAccountManagePage(){
