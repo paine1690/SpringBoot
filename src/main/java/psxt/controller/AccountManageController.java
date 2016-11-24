@@ -27,6 +27,16 @@ public class AccountManageController {
 		return accountManageHandler.getAllSchooleAccount();
 	}
 	
+
+	//获取所有专家账号
+	@RequestMapping("/dcnh/getAllTeacherAccount")
+	@ResponseBody
+	public List<User> getAllTeacherAccount() {
+		System.out.println("get All Teacher account");
+		return accountManageHandler.getAllTeacherAccount();
+	}
+	
+	
 	//修改账号用户名或密码
 	@RequestMapping("/psxt/changeNameOrPassword")
 	@ResponseBody
@@ -35,4 +45,15 @@ public class AccountManageController {
 		ResponseMessage re=accountManageHandler.changeNameOrPassword(id, userName, password);
 		return re;
 	}
+	
+	//修改账号用户名或密码或备注
+	@RequestMapping("/psxt/changeNameOrPassworORemark")
+	@ResponseBody
+	public ResponseMessage changeNameOrPassworORemark(@RequestParam int id, @RequestParam String userName, @RequestParam String password, @RequestParam String remark) {
+		System.out.println("changeNameOrPassworORemark: "+id+" "+userName+" "+password+" "+remark);
+		ResponseMessage re=accountManageHandler.changeNameOrPassworORemark(id, userName, password, remark);
+		return re;
+	}
+	
+	
 }

@@ -41,4 +41,8 @@ public interface UserDBMapper {
 	@Update("update user_table set userName=#{userName},password=#{password} where id=#{id};")
 	public boolean changeNameOrPassword(@Param("id") int id,@Param("userName") String userName, @Param("password") String password);
 	
+	
+	@Update("update user_table set userName=#{userName},password=#{password},remark=#{remark} where id=#{id};")
+	public boolean changeNameOrPassworORemark(@Param("id") int id,@Param("userName") String userName, @Param("password") String password, @Param("remark") String remark);
+	
 }

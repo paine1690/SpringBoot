@@ -39,4 +39,20 @@ public class UserDBService {
 		return responseMessage;
 	}
 	
+	//修改指定id的userName和password和remark
+	public ResponseMessage changeNameOrPassworORemark(int id, String userName, String password, String remark){
+		ResponseMessage responseMessage = new ResponseMessage();
+		if(userDBMapper.changeNameOrPassworORemark(id, userName, password, remark)){
+			responseMessage.setCode(ResponseCode.SUCCESS.ordinal()); 
+		}else{
+			responseMessage.setCode(ResponseCode.FAILED.ordinal()); 
+		}
+		return responseMessage;
+	}
+	
+	
+	
+	
+	
+	
 }

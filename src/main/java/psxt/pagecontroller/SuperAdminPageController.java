@@ -10,14 +10,24 @@ public class SuperAdminPageController {
 		return "/psxt/superadmin/superadmin";
 	}
 	
+	//获取学校账户页面
 	@RequestMapping("/psxt/getSchoolAccountPage")
 	public String getSchoolAccountPage(){
 		return "/psxt/superadmin/schoolAccountPage";
 	}
 	
 
+	//获取专家账户管理页面
+	@RequestMapping("/psxt/showTeachermanagePage")
+	public String showTeachermanagePage(){
+		return "/psxt/superadmin/teachermanagePage";
+	}
 	
-	
+	//获取专家账户展示页面
+	@RequestMapping("/psxt/getTeacherAccountPage")
+	public String getTeacherAccountPage(){
+		return "/psxt/superadmin/teacherAccountPage";
+	}
 	
 	
 	

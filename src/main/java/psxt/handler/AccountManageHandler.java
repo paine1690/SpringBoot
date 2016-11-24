@@ -20,8 +20,19 @@ public class AccountManageHandler {
 		return userDBService.getUsersByRole(2);
 	}
 	
+	
+	public List<User> getAllTeacherAccount(){
+		return userDBService.getUsersByRole(3);
+	}
+	
+	
 	//修改账号用户名或密码
 	public ResponseMessage changeNameOrPassword(int id, String userName, String password){
 		return userDBService.changeNameOrPassword(id, userName, password);
+	}
+	
+	//修改账号用户名或密码或备注
+	public ResponseMessage changeNameOrPassworORemark(int id, String userName, String password, String remark){
+		return userDBService.changeNameOrPassworORemark(id, userName, password, remark);
 	}
 }
