@@ -11,4 +11,5 @@ public class User {
 	private String school;
 	private String remark;
 	private int role;
+	private String dir;
 }

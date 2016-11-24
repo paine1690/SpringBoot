@@ -32,7 +32,8 @@ public interface UserDBMapper {
 		@Result(property="userName",column="username",javaType=String.class,jdbcType=JdbcType.VARCHAR),
 		@Result(property="password",column="password",javaType=String.class,jdbcType=JdbcType.VARCHAR),
 		@Result(property="school",column="school",javaType=String.class,jdbcType=JdbcType.VARCHAR),
-		@Result(property="role",column="role",javaType=int.class,jdbcType=JdbcType.VARCHAR)
+		@Result(property="role",column="role",javaType=int.class,jdbcType=JdbcType.VARCHAR),
+		@Result(property="dir",column="dir",javaType=String.class,jdbcType=JdbcType.VARCHAR)
 		
 	})
 	@Select("SELECT * FROM user_table where role=#{role};")
@@ -50,5 +51,10 @@ public interface UserDBMapper {
 	@Insert("INSERT INTO `user_table` (`userName`, `password`, `remark`, `role`) "
 			+ "VALUES (#{userName}, #{password}, #{remark}, #{role});")
 	public boolean addNewAccount(@Param("userName") String userName, @Param("password") String password, @Param("remark") String remark, @Param("role") int role);
-		
+	
+	@Select("SELECT * FROM user_table where id=#{userId};")
+	public User getUserById(@Param("userId") int userId) ;
+	
+	@Update("update user_table set dir=#{fileDir} where id=#{userId};")
+	public boolean updateFileDirByUserId(@Param("fileDir") String fileDir, @Param("userId") int userId);
 }

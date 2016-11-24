@@ -34,6 +34,7 @@ function postNewProject() {
 	
 	// 获取userID
 	console.log("userId:::" + userId);
+	
 	$.ajax({
 		url:"/psxt/addnewproject",
 		type:"POST",
@@ -45,7 +46,7 @@ function postNewProject() {
 //			teacher:$("#teacher").val(),
 //			prjct_title:$("#prjct_title").val(),
 //			participators:participatorsArray,
-			attachement_id:$("#attachementId").val(),
+			fileDir:$("#attachementId").val(),
 			userId : userId
 		},
 		success:function(data) {

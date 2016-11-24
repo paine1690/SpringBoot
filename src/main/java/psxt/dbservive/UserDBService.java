@@ -61,4 +61,21 @@ public class UserDBService {
 		return responseMessage;
 	}
 	
+	/**
+	 * 上传或者更新文件路径
+	 * @param userId
+	 * @param fileDir
+	 * @return
+	 */
+	public ResponseMessage updateFile(int userId, String fileDir){
+		ResponseMessage responseMessage = new ResponseMessage();
+		if(userDBMapper.updateFileDirByUserId(fileDir, userId)){
+			responseMessage.setCode(ResponseCode.SUCCESS.ordinal());
+		}
+		else {
+			responseMessage.setCode(ResponseCode.FAILED.ordinal());
+		}
+		return responseMessage;
+	}
+	
 }
