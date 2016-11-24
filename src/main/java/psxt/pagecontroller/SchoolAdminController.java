@@ -9,4 +9,9 @@ public class SchoolAdminController {
 	public String getSchoolAdminPage(){
 		return "/psxt/schooladmin/schooladmin";
 	}
+	
+	
+	
+	
+	
 }

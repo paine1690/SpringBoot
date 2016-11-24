@@ -1,9 +1,12 @@
 package psxt.mapper;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Result;
 import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 import org.apache.ibatis.type.JdbcType;
 
 
@@ -22,7 +25,24 @@ public interface UserDBMapper {
 	public User getUserByUserName(@Param("userName") String userName);
 	
 	
-
 	
-
+	@Results({
+		@Result(property="id",column="id",javaType=int.class,jdbcType=JdbcType.VARCHAR),
+		@Result(property="userName",column="username",javaType=String.class,jdbcType=JdbcType.VARCHAR),
+		@Result(property="password",column="password",javaType=String.class,jdbcType=JdbcType.VARCHAR),
+		@Result(property="school",column="school",javaType=String.class,jdbcType=JdbcType.VARCHAR),
+		@Result(property="role",column="role",javaType=int.class,jdbcType=JdbcType.VARCHAR)
+		
+	})
+	@Select("SELECT * FROM user_table where role=#{role};")
+	public List<User> getUserByRole(@Param("role") int role);
+	
+	
+	@Update("update user_table set userName=#{userName},password=#{password} where id=#{id};")
+	public boolean changeNameOrPassword(@Param("id") int id,@Param("userName") String userName, @Param("password") String password);
+	
+	
+	@Update("update user_table set userName=#{userName},password=#{password},remark=#{remark} where id=#{id};")
+	public boolean changeNameOrPassworORemark(@Param("id") int id,@Param("userName") String userName, @Param("password") String password, @Param("remark") String remark);
+	
 }

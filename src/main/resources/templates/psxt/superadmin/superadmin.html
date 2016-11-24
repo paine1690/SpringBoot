@@ -20,8 +20,8 @@
 		<script type='text/javascript' src="/psxt/js/vue.js"></script>
 		
 		<script type='text/javascript' src="/psxt/js/superadmin/superadmin.js"></script>	
-		<script type='text/javascript' src="/psxt/js/superadmin/projectManage.js"></script>
-		<script src="/psxt/js/superadmin/result.js"></script>		
+		<script type='text/javascript' src="/psxt/js/superadmin/projectManage.js"></script> 
+ 		<script src="/psxt/js/superadmin/result.js"></script>	
 		<script src="/psxt/js/jquery.cookie.js"></script>
     </head>   
 
@@ -56,9 +56,14 @@
 
 		<div class="menu-list" style="height: 820px">
 			
-			<a href="#" onclick="accountManage()" class="menu-button-middle">
-				<span class="glyphicon glyphicon-th-large ">&nbsp;账户管理</span>
+			<a href="#" onclick="showSchoolAccount()" class="menu-button-middle">
+				<span class="glyphicon glyphicon-th-large ">&nbsp;学校账户管理</span>
 			</a>
+			
+			<a href="#" onclick="showTeachermanagePage()" class="menu-button-middle">
+				<span class="glyphicon glyphicon-th-large ">&nbsp;专家账户管理</span>
+			</a>
+			
 			
 			<a href="#" onclick="showProjectpage()" class="menu-button-middle">
 				<span class="glyphicon glyphicon-th-large">&nbsp;查看项目</span>
@@ -101,15 +106,68 @@
 
 </body>
 <script>
-	function onload(){
-		  $.ajax({
-		      url: '/dcnh/getuserinfo',
-		      type: 'get',
-		      dataType: 'json',
-		      success: function(data){
-		    	  $("#userName").html(data.userName+" 欢迎您");
-		      }
-		    });
-		}
+	function showTeachermanagePage() {
+		$.ajax({
+			url : '/psxt/showTeachermanagePage',
+			type : 'get',
+			dataType : 'text',
+			success : function(data) {
+				$("#contains").html(data);
+			}
+		});
+	}
+	
+	
+
+	//part1
+	var accountList = [ {
+		id : "id",
+		userName : "userName",
+		school : "school",
+		password : "password",
+	} ];
+
+	var showAccount;
+
+	//显示学校账户	
+	function showSchoolAccount() {
+		$.ajax({
+			url : '/psxt/getSchoolAccountPage',
+			type : 'get',
+			dataType : 'text',
+			success : function(data) {
+				$("#contains").html(data);
+				showAccount = new Vue({
+					el : '#schoolAccountTable',
+					data : {
+						accountList : accountList
+					}
+				});
+				showAllAccountt();
+			}
+		});
+	}
+
+	function showAllAccountt() {
+		$.ajax({
+			url : '/dcnh/getAllSchoolAccount',
+			type : 'get',
+			dataType : 'json',
+			success : function(data) {
+				showAccount.accountList = data;
+			}
+		});
+	}
+
+	function onload() {
+		$.ajax({
+			url : '/psxt/getuserinfo',
+			type : 'get',
+			dataType : 'json',
+			success : function(data) {
+				$("#userName").html(data.userName + " 欢迎您");
+			}
+		});
+	}
 </script>
 </html>
