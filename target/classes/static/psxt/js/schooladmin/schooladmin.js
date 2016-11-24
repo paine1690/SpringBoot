@@ -18,8 +18,9 @@ var school_projectList = [{
 var school_showProjectVue;
 
 function getaddProjectPage(){
+//	console.log(1234);
 	$.ajax({
-		  url: '/dcnh/getaddprojectbutton',
+		  url: '/psxt/getaddprojectbutton',
 	      type: 'get',
 	      dataType: 'text',
 	      success: function(data){
@@ -30,7 +31,7 @@ function getaddProjectPage(){
 
 function school_showProjectpage(){
 	$.ajax({
-		  url: '/dcnh/getshowprojectpage',
+		  url: '/psxt/getshowprojectpage',
 	      type: 'get',
 	      dataType: 'text',
 	      success: function(data){

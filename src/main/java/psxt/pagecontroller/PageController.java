@@ -18,6 +18,15 @@ public class PageController {
 	public String getProjectShowpage(){
 		return "/psxt/showallproject";
 	}
+	
+	@RequestMapping("/psxt/getaddprojectbutton")
+	public String getAddProjectPage(){
+		return "/psxt/schooladmin/addproject";
+	}
+	@RequestMapping("/psxt/getaddprjctpage")
+	public String getAddPrjctPage() {
+		return "/psxt/projectmanagment/add_project";
+	}
     
 
 }
