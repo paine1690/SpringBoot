@@ -50,9 +50,15 @@ public class UserDBService {
 		return responseMessage;
 	}
 	
-	
-	
-	
-	
+	//新增一个账户,指定用户名、密码、备注、身份
+	public ResponseMessage addNewAccount(String userName, String password, String remark, int role){
+		ResponseMessage responseMessage = new ResponseMessage();
+		if(userDBMapper.addNewAccount(userName, password, remark, role)){
+			responseMessage.setCode(ResponseCode.SUCCESS.ordinal()); 
+		}else{
+			responseMessage.setCode(ResponseCode.FAILED.ordinal()); 
+		}
+		return responseMessage;
+	}
 	
 }
