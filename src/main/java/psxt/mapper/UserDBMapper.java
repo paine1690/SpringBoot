@@ -57,4 +57,8 @@ public interface UserDBMapper {
 	
 	@Update("update user_table set dir=#{fileDir} where id=#{userId};")
 	public boolean updateFileDirByUserId(@Param("fileDir") String fileDir, @Param("userId") int userId);
+	
+	
+	@Update("UPDATE `psxt`.`user_table` SET `group`=#{group} WHERE `id`=#{id};")
+	public boolean changeGroup(@Param("id") int id, @Param("group") int group);
 }

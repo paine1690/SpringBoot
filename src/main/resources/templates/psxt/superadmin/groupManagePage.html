@@ -1,0 +1,104 @@
+<div>
+	<button  type="button" class="btn btn-success" onclick="getCreateGroupPage()">生成分组</button>
+
+	<button type="button" class="btn btn-success" onclick="showSchoolGroupPage()">查看学校分组</button> 
+	   
+	<button type="button" class="btn btn-success" onclick="showTeacherGroupPage()">查看专家分组</button> 
+
+	<div id="show"></div>
+</div>
+
+<script>
+
+	//2
+	var schoolGroupList = [ {
+		id : "id",
+		userName : "userName",
+		school : "school",
+		password : "password",
+	} ];
+
+	var showSchoolGroup;
+	
+	function showSchoolGroupPage(){
+		$.ajax({
+			url : '/psxt/getSchoolGroupPage',
+			type : 'get',
+			dataType : 'text',
+			success : function(data) {
+				$("#show").html(data);
+				showSchoolGroup = new Vue({
+					el : '#schoolGroupTable',
+					data : {
+						schoolGroupList : schoolGroupList
+					},
+				});
+				showAllSchoolGroup();
+			}
+		});
+	}
+	
+	function showAllSchoolGroup(){
+		$.ajax({
+			url : '/psxt/showAllSchoolGroup',
+			type : 'get',
+			dataType : 'json',
+			success : function(data) {
+				showSchoolGroup.schoolGroupList = data;
+			}
+		});
+	}
+	
+	//3
+	var teacherGroupList = [ {
+		id : "id",
+		userName : "userName",
+		school : "school",
+		password : "password",
+	} ];
+
+	var showTeacherGroup;	
+	
+	function showTeacherGroupPage(){
+		$.ajax({
+			url : '/psxt/getTeacherGroupPage',
+			type : 'get',
+			dataType : 'text',
+			success : function(data) {
+				$("#show").html(data);
+				showTeacherGroup = new Vue({
+					el : '#teacherGroupTable',
+					data : {
+						teacherGroupList : teacherGroupList
+					},
+				});
+				showAllTeacherGroup();
+			}
+		});
+	}
+	
+	function showAllTeacherGroup(){
+		$.ajax({
+			url : '/psxt/showAllTeacherGroup',
+			type : 'get',
+			dataType : 'json',
+			success : function(data) {
+				showTeacherGroup.teacherGroupList = data;
+			}
+		});
+	}
+	
+	
+	//1
+	function getCreateGroupPage() {
+		$.ajax({
+			url : '/psxt/getCreateGroupPage',
+			type : 'get',
+			dataType : 'text',
+			success : function(data) {
+				$("#show").html(data);
+			}
+		});
+	}
+
+</script>
