@@ -25,9 +25,14 @@ public class GroupHandler {
 			re.setCode(ResponseCode.FAILED.ordinal());
 			re.setMessage("请输入合法数字！");
 		}else{
-			int groupNUm=Integer.valueOf(num);			
+			int groupNUm=Integer.valueOf(num);	
 			List<User> schoolList=accountManageHandler.getAllSchooleAccount();
-			List<User> teacherlList=accountManageHandler.getAllTeacherAccount();			
+			List<User> teacherlList=accountManageHandler.getAllTeacherAccount();	
+			if(groupNUm>schoolList.size()||groupNUm>teacherlList.size()){
+				re.setCode(ResponseCode.FAILED.ordinal());
+				re.setMessage("分组太多，专家都不够用啦！");
+				return re;
+			}
 			int cnt=0;
 			for(User u: schoolList){
 				int id=u.getId();

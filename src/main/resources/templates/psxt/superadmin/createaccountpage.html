@@ -21,12 +21,6 @@
 			<br></br>
 			
 			<div class="input-group">
-				<span class="input-group-addon">确认密码</span>
-				<input id="password2" style="width:400px;" type="password" class="form-control" placeholder="确认密码"></input>
-			</div>
-			<br></br>
-			
-			<div class="input-group">
 				<span class="input-group-addon">备注</span>
 				<input id="remark" style="width:400px;" type="text" class="form-control" placeholder="备注"></input>
 			</div>
@@ -44,9 +38,8 @@
 	function addNewAccount(){
 		var userName = $("#newUserName").val();
 		var password1 = $("#password1").val();
-		var password2 = $("#password2").val();
 		var remark = $("#remark").val();
-		//alert(userName+" "+password1+" "+password2+" "+remark);
+		//alert(userName+" "+password1+" "+remark);
 		if(!check()){
 			return;
 		}
@@ -76,17 +69,13 @@
 	function check(){
 		var userName = $("#newUserName").val();
 		var password1 = $("#password1").val();
-		var password2 = $("#password2").val();
 
 		
 		if(password1=="" || password1==null){
 			alert("密码不能为空");
 			return false;
 		}
-		if(password1 != password2){
-			alert("密码不一致");
-			return false;
-		}
+
 		
 		if(userName=="" || userName==null){
 			alert("用户名不能为空");
@@ -98,7 +87,6 @@
 	function clear(){
 		$("#newUserName").val("");
 		$("#password1").val("");
-		$("#password2").val("");
 		$("#remark").val("");
 	}
 

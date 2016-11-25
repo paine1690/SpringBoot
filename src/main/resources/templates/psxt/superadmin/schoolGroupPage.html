@@ -1,5 +1,6 @@
 
 <div>
+
 	<table id="schoolGroupTable" class="table table-bordered">
 		  <caption>学校分组信息</caption>
 		  <thead>
@@ -13,11 +14,15 @@
 		    <tr id="3" v-for="user in schoolGroupList" >
 		    	<td>{{user.group}}</td>
 		    	<td>{{user.school}}</td>
-		      	<td>{{user.dir}}</td>
+		      	<td >
+		      		<a v-if="user.dir!=null" href="/psxt/getattachement/{{user.dir}}">附件</a>
+		      		<span v-else="" >还未上传</span>
+		      	 </td>
 		    </tr>
 		  </tbody>
 	</table>
 </div>
+
 <script>
 
 </script>

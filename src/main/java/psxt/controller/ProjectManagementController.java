@@ -4,10 +4,18 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.FileSystemResource;
+import org.springframework.core.io.InputStreamResource;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -57,6 +65,7 @@ public class ProjectManagementController {
 		
 		return response;
 	}
+
 	/**
 	 * 获取该用户的所有学校项目的分组
 	 * @param session
@@ -83,4 +92,16 @@ public class ProjectManagementController {
 		User user = (User)session.getAttribute(SessionKey.USERNAME.name());
 		return projectManagementHandler.updateJudgement(user.getId(), schoolId, score);
 	}
+
+	
+	
+	/*
+	 * 上面代码太乱，我要和它划清界限
+	 */
+	@RequestMapping(value="/psxt/getattachement/{filePath}")
+	public ResponseEntity<InputStreamResource> getAttachement(@PathVariable String filePath,HttpServletRequest request,HttpServletResponse response) throws IOException{ 
+		System.out.println(filePath);
+		return attachementHandler.getFile(request, response, filePath);
+	}
+
 }

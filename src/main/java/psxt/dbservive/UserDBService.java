@@ -27,6 +27,7 @@ public class UserDBService {
 	
 	//获取指定身份的所有账号
 	public List<User> getUsersByRole(int role){
+		System.out.println("nengjinlaima ");
 		return userDBMapper.getUserByRole(role);
 	}
 	
