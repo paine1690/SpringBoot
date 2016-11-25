@@ -31,4 +31,16 @@ public class ProjectManageHandler {
 		List<ScoreMessage> list = userDBService.getProjectMessageListOfJudge(group, userId);
 		return list;
 	}
+	/**
+	 * 如果还没评分，则插入评分；已经评分，更改评分。
+	 * @param userId
+	 * @param schoolId
+	 * @param score
+	 * @return
+	 */
+	public ResponseMessage updateJudgement(int userId, int schoolId, int score){
+		ResponseMessage responseMessage = new ResponseMessage();
+		//先查找，能不能找到，不能，插入；能，更新
+		return responseMessage;
+	}
 }

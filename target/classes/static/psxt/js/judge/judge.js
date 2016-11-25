@@ -78,15 +78,15 @@ function getProjectList(){
  * 评委为项目打分
  */
 function grade(object){
-	var projectId = $(object).attr("id");
-	var score = $("#"+"score_"+projectId).val();
+	var schoolId = $(object).attr("id");
+	var score = $("#"+"score_"+schoolId).val();
 	//alert("#### + "+score);
 	$.ajax({
-		url:"/dcnh/addjudgement",
+		url:"/psxt/addjudgement",
 		type:"post",
 		dataType:"json",
 		data:{
-			projectId:projectId,
+			schoolId:schoolId,
 			score:score
 		},
 		success:function(response){

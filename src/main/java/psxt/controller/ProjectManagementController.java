@@ -76,4 +76,11 @@ public class ProjectManagementController {
 		}
 		return null;
 	}
+	
+	@RequestMapping("/psxt/addjudgement")
+	@ResponseBody
+	public ResponseMessage addJudgement(HttpSession session, @RequestParam int schoolId, @RequestParam int score){
+		User user = (User)session.getAttribute(SessionKey.USERNAME.name());
+		return projectManagementHandler.updateJudgement(user.getId(), schoolId, score);
+	}
 }
