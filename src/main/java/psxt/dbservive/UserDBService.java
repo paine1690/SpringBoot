@@ -30,6 +30,7 @@ public class UserDBService {
 		return userDBMapper.getUserByRole(role);
 	}
 	
+	
 	//修改指定id的userName和password
 	public ResponseMessage changeNameOrPassword(int id, String userName, String password){
 		ResponseMessage responseMessage = new ResponseMessage();
@@ -51,6 +52,12 @@ public class UserDBService {
 		}
 		return responseMessage;
 	}
+	
+	//修改指定id的分组信息
+	public boolean changeGroup(int id, int group){
+		return userDBMapper.changeGroup(id, group);
+	}
+	
 	
 	//新增一个账户,指定用户名、密码、备注、身份
 	public ResponseMessage addNewAccount(String userName, String password, String remark, int role){

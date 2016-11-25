@@ -62,12 +62,8 @@
 						<span class="glyphicon glyphicon-th-large ">&nbsp;专家账户管理</span>
 					</a>
 					
-					
-					<a href="#" onclick="showProjectpage()" class="menu-button-middle">
-						<span class="glyphicon glyphicon-th-large">&nbsp;查看项目</span>
-					</a>			
-					
-					<a href="#" onclick="showProjectManagepage()" class="menu-button-middle">
+
+					<a href="#" onclick="showGroupManagePage()" class="menu-button-middle">
 						<span class="glyphicon glyphicon-th-large">&nbsp;项目分配</span>
 					</a>	
 				</div>
@@ -86,7 +82,17 @@
 
 
 <script>
-
+	//part3
+	function showGroupManagePage(){
+		$.ajax({
+			url : '/psxt/showGroupManagePage',
+			type : 'get',
+			dataType : 'text',
+			success : function(data) {
+				$("#contains").html(data);
+			}
+		});
+	}
 
 
 	//part2
@@ -132,7 +138,7 @@
 
 	function showAllAccountt() {
 		$.ajax({
-			url : '/dcnh/getAllSchoolAccount',
+			url : '/psxt/getAllSchoolAccount',
 			type : 'get',
 			dataType : 'json',
 			success : function(data) {

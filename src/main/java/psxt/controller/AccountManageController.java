@@ -20,21 +20,36 @@ public class AccountManageController {
 	AccountManageHandler accountManageHandler;
 	
 	//获取所有学校账号
-	@RequestMapping("/dcnh/getAllSchoolAccount")
+	@RequestMapping("/psxt/getAllSchoolAccount")
 	@ResponseBody
 	public List<User> getAllProject() {
-		System.out.println("get All school account");
 		return accountManageHandler.getAllSchooleAccount();
+	}
+	
+	//获取所有学校账号，按分组排序
+	@RequestMapping("/psxt/showAllSchoolGroup")
+	@ResponseBody
+	public List<User> showAllSchoolGroup() {
+		return accountManageHandler.getAllAccountByGroup(2);
 	}
 	
 
 	//获取所有专家账号
-	@RequestMapping("/dcnh/getAllTeacherAccount")
+	@RequestMapping("/psxt/getAllTeacherAccount")
 	@ResponseBody
 	public List<User> getAllTeacherAccount() {
-		System.out.println("get All Teacher account");
 		return accountManageHandler.getAllTeacherAccount();
 	}
+
+
+	//获取所有学校账号，按分组排序
+	@RequestMapping("/psxt/showAllTeacherGroup")
+	@ResponseBody
+	public List<User> showAllTeacherGroup() {
+		System.out.println("showAllTeacherGroup");
+		return accountManageHandler.getAllAccountByGroup(3);
+	}
+	
 	
 	
 	//修改账号用户名或密码

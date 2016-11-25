@@ -59,6 +59,7 @@ public interface UserDBMapper {
 	public boolean updateFileDirByUserId(@Param("fileDir") String fileDir, @Param("userId") int userId);
 	
 	
+
 	
 	@Results({
 		@Result(property="id",column="id",javaType=int.class,jdbcType=JdbcType.INTEGER),
@@ -69,4 +70,8 @@ public interface UserDBMapper {
 	})
 	@Select("SELECT score_table.id, school, dir, score from user_table  LEFT JOIN score_table ON user_table.id = score_table.schoolId AND score_table.teacherId = #{userId}  WHERE `group`= #{group} AND role = 2 ;")
 	public List<ScoreMessage> selectProjectMessageByGroupAndUser(@Param("group") int group, @Param("userId") int userId);
+
+	@Update("UPDATE `psxt`.`user_table` SET `group`=#{group} WHERE `id`=#{id};")
+	public boolean changeGroup(@Param("id") int id, @Param("group") int group);
+
 }

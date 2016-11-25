@@ -1,5 +1,7 @@
 package psxt.handler;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +28,19 @@ public class AccountManageHandler {
 	}
 	
 	
+	//获取指定身份账号，按分组排序
+	public List<User> getAllAccountByGroup(int role){
+		List<User> re=userDBService.getUsersByRole(role);
+		Collections.sort(re, new Comparator<User>(){
+			@Override
+			public int compare(User u1, User u2) {
+				return u1.getGroup()>=u2.getGroup()? 1: -1;
+			}
+		});
+		return re;
+	}
+	
+	
 	//修改账号用户名或密码
 	public ResponseMessage changeNameOrPassword(int id, String userName, String password){
 		return userDBService.changeNameOrPassword(id, userName, password);
@@ -35,6 +50,7 @@ public class AccountManageHandler {
 	public ResponseMessage changeNameOrPassworORemark(int id, String userName, String password, String remark){
 		return userDBService.changeNameOrPassworORemark(id, userName, password, remark);
 	}
+	
 	
 	//新增专家用户
 	public ResponseMessage addNewTeacherAccount(String userName, String password, String remark){

@@ -1,2 +1,5 @@
 /target/
 target/classes/META-INF/maven/PSXT/PSXT/pom.properties
+target/classes/META-INF/maven/PSXT/PSXT/pom.properties
+*.class
+*.class

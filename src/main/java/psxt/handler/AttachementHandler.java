@@ -79,7 +79,8 @@ public class AttachementHandler {
 //				attachement.setAttachementId(uuid);
 //				attachement.setFilePath(path+"/"+newFileName);
 //				attachementDBMapper.insertAttachementDBMapper(attachement);
-	        	String fileDir = path+"/"+newFileName;
+//	        	String fileDir = path+"/"+newFileName;
+				String fileDir = newFileName;
 //	        	return newFileName;
 	  		    return fileDir;
 	   }

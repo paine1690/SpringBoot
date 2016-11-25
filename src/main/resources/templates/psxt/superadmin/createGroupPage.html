@@ -1,0 +1,43 @@
+<div>
+	<br></br>
+	<div class="input-group">
+		<span class="input-group-addon">指定生成组数</span>
+		<input id="groupNum" style="width:400px;" type="text" class="form-control" placeholder=" "></input>
+	</div>
+	<br></br>
+	
+	<div class="input-group">
+		<button type="button"  class="btn btn-info" onclick="createGroup()">生成分组</button>
+	</div>
+</div>
+
+<script>
+
+	function createGroup(){
+		var groupNum = $("#groupNum").val();
+		
+		var param={
+				groupNum : groupNum,
+		}
+		
+		$.ajax({
+			url:'/psxt/createGroup',
+			type:'post',
+			dataType: 'json',
+			data:param,
+			success:function(data){
+				  if(data.code == 0){
+		    		  alert("添加成功,隔壁查看！");
+		    	  }
+		    	  else{
+		    		  alert(data.message);
+		    	 }
+			}
+		});
+	}
+
+
+
+
+
+</script>
