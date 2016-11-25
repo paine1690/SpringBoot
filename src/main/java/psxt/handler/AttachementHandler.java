@@ -3,7 +3,6 @@ package psxt.handler;
 
 import java.io.BufferedOutputStream;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -15,12 +14,14 @@ import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
+import org.springframework.core.io.FileSystemResource;
+import org.springframework.core.io.InputStreamResource;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
-import org.springframework.util.StreamUtils;
 import org.springframework.web.multipart.MultipartFile;
 
-import psxt.mapper.AttachementDBMapper;
-import psxt.mode.Attachement;
 import psxt.myutil.UUIGenerator;
 
 @Slf4j
@@ -29,40 +30,25 @@ public class AttachementHandler {
 	
 		@Autowired
 		private Environment env;
-	
-		@Autowired
-		private AttachementDBMapper attachementDBMapper;
 		
-	    public void getFile( HttpServletRequest request,HttpServletResponse response,String attachementId){
-	    	Attachement attachement = attachementDBMapper.getAttachementById(attachementId);
-	    	//String path1 = env.getProperty("rootPath")+request.getRequestURI();
-	    	//log.info("path = " + path1);
-	    	if(attachement==null){
-	    		System.out.println("#### attachement is null &&&&&&");
-	    	}
-	    	String path = attachement.getFilePath();
+	    public ResponseEntity<InputStreamResource> getFile( HttpServletRequest request,HttpServletResponse response,String filePath) throws IOException{
+	    	String path = "E://"+filePath+".rar";
 	    	System.out.println("####### path %%%%% "+path);
-	    	FileInputStream inputStream = null; 
-	    	try {
-	    		inputStream = new FileInputStream(path);
-				StreamUtils.copy(inputStream , response.getOutputStream());
-			} catch (IOException e) {
-				log.warn("StreamUtils copy warn",e );
-			}
-	    	try {
-				response.getOutputStream().flush();
-			} catch (IOException e) {
-				log.warn("getOutputStream flush warn",e );
-			}finally{
-				if(inputStream != null){
-					try {
-						inputStream.close();
-					} catch (IOException e) {
-						log.warn("close inputstream of upload file failed ",e);
-					}
-				}
-			}
-	    	
+	    	FileSystemResource file=new FileSystemResource(path);
+	    	if(!file.exists()){
+	    		System.out.println("文件不存在");
+	    	}
+	    	HttpHeaders headers = new HttpHeaders();  
+	        headers.add("Cache-Control", "no-cache, no-store, must-revalidate");  
+	        headers.add("Content-Disposition", String.format("attachment; filename=\"%s\"", file.getFilename()));  
+	        headers.add("Pragma", "no-cache");  
+	        headers.add("Expires", "0");  
+	        return ResponseEntity  
+	                .ok()  
+	                .headers(headers)  
+	                .contentLength(file.contentLength())  
+	                .contentType(MediaType.parseMediaType("application/octet-stream"))  
+	                .body(new InputStreamResource(file.getInputStream())); 
 	    }
 	    
 	    public String uploadFile(MultipartFile file,String fileName) throws IOException {

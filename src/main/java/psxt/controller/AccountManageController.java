@@ -30,6 +30,7 @@ public class AccountManageController {
 	@RequestMapping("/psxt/showAllSchoolGroup")
 	@ResponseBody
 	public List<User> showAllSchoolGroup() {
+		System.out.println("showAllSchoolGroup");
 		return accountManageHandler.getAllAccountByGroup(2);
 	}
 	

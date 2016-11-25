@@ -31,10 +31,13 @@ public class AccountManageHandler {
 	//获取指定身份账号，按分组排序
 	public List<User> getAllAccountByGroup(int role){
 		List<User> re=userDBService.getUsersByRole(role);
+//		for(User u: re){
+//			System.out.println(u.getGroup()+" "+u.getSchool());
+//		}
 		Collections.sort(re, new Comparator<User>(){
 			@Override
 			public int compare(User u1, User u2) {
-				return u1.getGroup()>=u2.getGroup()? 1: -1;
+				return u1.getGroup()>u2.getGroup()? 1: u1.getGroup()==u2.getGroup()? 0: -1;
 			}
 		});
 		return re;
