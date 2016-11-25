@@ -11,19 +11,16 @@ var judgeshowProject = null;
  * 显示大创项目
  */
 var projectList = [{
-	title:"title",
+	id : "id",
 	school:"school",
-	participators:"participators",
-	teacher:"teacher",
-	mainCategory:"mainCategory",
-	subCategory:"subCategory",
+	dir : "dir",
 	score:"score"
 }];
 
 function getproject(){
 	var kind = 0;
 	$.ajax({
-		url : '/dcnh/judgeshowproject',
+		url : '/psxt/judgeshowproject',
 		type : 'get',
 		dataType : 'text',
 		success : function(data) {
@@ -34,55 +31,31 @@ function getproject(){
 }
 
 function updateProjectList(){
-	var val = $("#selectkind").val();
-	var kind;
-	if(val == "已评分"){
-		kind = 1;
 		$.ajax({
-			url:'/dcnh/gradeprojectpage',
+			url:'/psxt/gradeprojectpage',
 			type:'get',
 			dataType:'text',
 			success:function(data){
-				$("#projectTable_div").html(data);
-				getProjectList(kind);
+				$("#projectTable_div").html(data);//填充html
+				getProjectList();//填充数据
 			}
 		});
-		
-	}
-	else if(val == "未评分"){
-		kind = 2;
-		$.ajax({
-			url:'/dcnh/notgradedproject',
-			type:'get',
-			dataType:'text',
-			success:function(data){
-				$("#projectTable_div").html(data);
-				getProjectList(kind);
-			}
-			
-		});
-		
-	}
-	else
-		{
-			alert("### "+val);
-		}
+	
 		//kind=0;
 	//getProjectList(kind);
 }
 
-function getProjectList(kind){
+function getProjectList(){
+	console.log(123);
 	$.ajax({
-		url:'/dcnh/getprojectlist',
+		url:'/psxt/getprojectlist',
 		type:'get',
 		dataType:'json',
-		data:{
-			kind:kind
-		},//获取所有项目
+		//获取所有项目!!!!!!!!!!
 		success:function(data){
 		//	if(judgeshowProject == null)
 		//	{
-				//alert("@@@@@");
+				alert("@@@@@");
 				judgeshowProject = new Vue({
 					el:'#projectTable',
 					data:{
@@ -91,10 +64,10 @@ function getProjectList(kind){
 				});
 		//	}
 			
-			for(var index in data){
-				if(data[index]!=null &&data[index].attachmentId !=null)
-					data[index].attachmentId = "/getattachement/"+data[index].attachmentId;
-			}
+//			for(var index in data){
+//				if(data[index]!=null &&data[index].dir !=null)
+//					data[index].attachmentId = "/getattachement/"+data[index].attachmentId;
+//			}
 			judgeshowProject.projectList = data;
 		//	alert("####");
 		}

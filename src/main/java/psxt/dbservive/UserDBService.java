@@ -1,5 +1,6 @@
 package psxt.dbservive;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,7 @@ import lombok.Data;
 import psxt.globalInfo.ResponseCode;
 import psxt.mapper.UserDBMapper;
 import psxt.mode.ResponseMessage;
+import psxt.mode.ScoreMessage;
 import psxt.mode.User;
 
 @Data
@@ -76,6 +78,19 @@ public class UserDBService {
 			responseMessage.setCode(ResponseCode.FAILED.ordinal());
 		}
 		return responseMessage;
+	}
+	
+	/**
+	 * 获取该分组的学校信息以及分数信息
+	 * @param group
+	 * @param userId
+	 * @return
+	 */
+	public List<ScoreMessage> getProjectMessageListOfJudge(int group, int userId){
+		System.err.println("group:"+group + " userId:"+userId);
+		List<ScoreMessage> list = new ArrayList<>();
+		list = userDBMapper.selectProjectMessageByGroupAndUser(group, userId);
+		return list;
 	}
 	
 }

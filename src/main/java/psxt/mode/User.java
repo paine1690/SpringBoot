@@ -10,6 +10,7 @@ public class User {
 	private String email;
 	private String school;
 	private String remark;
+	private int group;
 	private int role;
 	private String dir;
 }

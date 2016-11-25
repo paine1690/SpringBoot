@@ -1,115 +1,111 @@
 <!DOCTYPE html>
 
 <html lang="en">
-    <head>
-   		<meta charset="utf-8"/>
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-        <meta name="renderer" content="webkit"/>
-        <title>后台管理</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <meta name="keywords" content="" />
-        <meta name="author" content="" />
-        
-		<link href="/psxt/css/base.css" rel="stylesheet"></link> 
-		<link href="/psxt/css/dashboard.css" rel="stylesheet"></link> 
-		<link href="/psxt/css/bootstrap-theme.min.css" rel="stylesheet"></link> 
-		<link href="/psxt/css/bootstrap.min.css" rel="stylesheet"></link> 
-		
-		<script type='text/javascript' src="/psxt/js/getcookie.js"></script>
-		<script type='text/javascript' src="/psxt/js/jquery-3.1.0.min.js"></script>	
-		<script type='text/javascript' src="/psxt/js/vue.js"></script>
-		
-		<script type='text/javascript' src="/psxt/js/superadmin/superadmin.js"></script>	
-		<script type='text/javascript' src="/psxt/js/superadmin/projectManage.js"></script>
-		<script src="/psxt/js/superadmin/result.js"></script>		
-		<script src="/psxt/js/jquery.cookie.js"></script>
-    </head>   
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="renderer" content="webkit" />
+<title>后台管理</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="keywords" content="" />
+<meta name="author" content="" />
 
-    <body onload="onload()">
-		<div id="basecontent">	
-       
-        <nav class="navbar navbar-inverse navbar-fixed-top">
-		      <div class="container-fluid">
-		        <div class="navbar-header">
-		          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-		            <span class="sr-only">Toggle navigation</span>
-		            <span class="icon-bar"></span>
-		            <span class="icon-bar"></span>
-		            <span class="icon-bar"></span>
-		          </button>
-		          <a class="navbar-brand" href="/dcnh"><b>辽宁省创新创业示范高校评审系统</b></a>
-		        </div>
-		        <div id="navbar" class="navbar-collapse collapse">
-		          <ul class="nav navbar-nav navbar-right">
-		             
-		          <li><a id="userName" href="#"></a></li> 
-		            <li><a href="/logout">退出</a></li>
-		          </ul>
-		        </div>
-		      </div>
-    	</nav>
-    
+<link href="/psxt/css/base.css" rel="stylesheet"></link>
+<link href="/psxt/css/dashboard.css" rel="stylesheet"></link>
+<link href="/psxt/css/bootstrap-theme.min.css" rel="stylesheet"></link>
+<link href="/psxt/css/bootstrap.min.css" rel="stylesheet"></link>
 
-<div class="container-fluid ">
-    <div class="row ">
-        <div class="col-sm-3 col-md-2 sidebar">	  
+<script type='text/javascript' src="/psxt/js/getcookie.js"></script>
+<script type='text/javascript' src="/psxt/js/jquery-3.1.0.min.js"></script>
+<script type='text/javascript' src="/psxt/js/vue.js"></script>
+<script type="text/javascript" src="/psxt/js/bootstrap.min.js"></script>
+<script src="/psxt/js/jquery.cookie.js"></script>
+<script type='text/javascript' src="/psxt/js/accountManage.js"></script>
+<script type='text/javascript' src="/psxt/js/judge/judge.js"></script>
 
-		<div class="menu-list" style="height: 820px">
-			
-			<a href="#" onclick="accountManage()" class="menu-button-middle">
-				<span class="glyphicon glyphicon-th-large ">&nbsp;上传项目</span>
-			</a>
-			
-			<a href="#" onclick="showProjectpage()" class="menu-button-middle">
-				<span class="glyphicon glyphicon-th-large">&nbsp;查看项目</span>
-			</a>			
-			
-			<a href="#" onclick="showProjectManagepage()" class="menu-button-middle">
-				<span class="glyphicon glyphicon-th-large">&nbsp;个人信息</span>
-			</a>				
-			
-			<!-- <a href="#" class="menu-button-middle" onclick="getResultSettingPage()">
+
+</head>
+
+<body onload="onload()">
+
+
+	<div id="basecontent">
+
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed"
+						data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+						aria-controls="navbar">
+						<span class="sr-only">Toggle navigation</span> <span
+							class="icon-bar"></span> <span class="icon-bar"></span> <span
+							class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="/dcnh"><b>辽宁省创新创业示范高校评审系统</b></a>
+				</div>
+				<div id="navbar" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav navbar-right">
+
+						<li><a id="userName" href="#"></a></li>
+						<li><a href="/logout">退出</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+
+		<div class="container-fluid ">
+			<div class="row ">
+				<div class="col-sm-3 col-md-2 sidebar">
+
+					<div class="menu-list" style="height: 820px">
+
+						 <a href="#" onclick="getproject()"
+							class="menu-button-middle"> <span
+							class="glyphicon glyphicon-th-large">&nbsp;查看项目</span>
+						</a> <a href="#" onclick="showProjectManagepage()"
+							class="menu-button-middle"> <span
+							class="glyphicon glyphicon-th-large">&nbsp;个人信息</span>
+						</a>
+
+						<!-- <a href="#" class="menu-button-middle" onclick="getResultSettingPage()">
 				<span class="glyphicon glyphicon-th">&nbsp;结果导出</span>
 			</a> 
 				
 		   	<a href="#" class="menu-button-middle">
 		   		<span class="glyphicon glyphicon glyphicon-user">&nbsp;个人信息</span>
 		   	</a> -->
+					</div>
+
+
+				</div>
+
+				<div id="contains" class="col-sm-9 col-md-10 sidebar">
+					
+				</div>
+
+			</div>
+		</div>
 	</div>
-
-
-	  </div>
+	<!-- <div id="basecontent">	 -->
 	
-	  <div id="contains" class="col-sm-9 col-md-10 sidebar" >
-	   <button  type="button" class="btn btn-success" onclick="setCreateaccountPage()">添加账户</button>
-	   <button type="button" class="btn btn-success" onclick="showUserInfo()">查看已有账户</button>
-	    <select id="permission" class="selectpicker">
-	     <option>校级管理员</option>
-		  <option>专家账户</option>
-		  <option>系统管理员</option>
-		</select>
-	   <div id="show">
-	   </div>
-	   
-	  </div>
-	
-	</div>
-	</div>
-</div> 
-
 
 
 </body>
 <script>
+var userId;
 	function onload(){
 		  $.ajax({
-		      url: '/dcnh/getuserinfo',
+		      url: '/psxt/getuserinfo',
 		      type: 'get',
 		      dataType: 'json',
 		      success: function(data){
+		    	  userId = data.id;
 		    	  $("#userName").html(data.userName+" 欢迎您");
 		      }
 		    });
+		  //接着再触发评审项目
 		}
+
 </script>
 </html>

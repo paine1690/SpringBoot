@@ -1,6 +1,8 @@
 package psxt.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
@@ -18,6 +20,7 @@ import psxt.handler.AttachementHandler;
 import psxt.handler.ProjectManageHandler;
 import lombok.extern.slf4j.Slf4j;
 import psxt.mode.ResponseMessage;
+import psxt.mode.ScoreMessage;
 import psxt.mode.User;
 
 @Controller
@@ -53,5 +56,24 @@ public class ProjectManagementController {
 		response = projectManagementHandler.addNewProject(user.getId(), fileDir);
 		
 		return response;
+	}
+	/**
+	 * 获取该用户的所有学校项目的分组
+	 * @param session
+	 * @return
+	 */
+	@RequestMapping("/psxt/getprojectlist")
+	 @ResponseBody
+	 public List<ScoreMessage> getProjectList(HttpSession session){
+		User user = (User)session.getAttribute(SessionKey.USERNAME.name());
+		if (user == null) {
+			System.out.println("---未登录---");
+			return new ArrayList<ScoreMessage>();
+		}
+		if(user.getRole() == 3){//专家账户
+			System.out.println("---专家---");
+			return projectManagementHandler.getAllProjectOfJudge(user.getGroup(), user.getId());	
+		}
+		return null;
 	}
 }

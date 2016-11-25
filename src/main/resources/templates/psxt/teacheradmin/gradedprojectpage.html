@@ -1,0 +1,30 @@
+<table id="projectTable" class="table table-bordered">
+				  <caption>大创项目信息</caption>
+				  <thead>
+				    <tr>
+				      
+				      <th>学校</th>
+				      
+				      <th>分数</th>
+				      
+				      
+				      <th>附件</th>
+				      <th>评分</th>
+				      <th>提交评分</th>
+				    </tr>
+				  </thead>
+				  <tbody>
+				    <tr  v-for="project in projectList">
+				     
+				      <td>{{project.school}}</td>
+				    
+				      <td>{{project.score}}</td>
+				      <td><a v-bind:href="project.dir">附件</a></td>
+				      <td><input id="score_{{project.id}}" 
+				 onkeyup="this.value=this.value.replace(/\D/g,'')"  onafterpaste="this.value=this.value.replace(/\D/g,'')" 
+				 type="text" class="form-control" placeholder="请打分，满分一百"></input></td>
+				      <td><button  id="{{project.id}}" type="button" class="btn btn-success" onclick="grade(this)">提交评分</button> </td>
+				      
+				    </tr>
+				  </tbody>
+</table>

@@ -10,7 +10,7 @@ import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 import org.apache.ibatis.type.JdbcType;
 
-
+import psxt.mode.ScoreMessage;
 import psxt.mode.User;
 
 
@@ -57,4 +57,16 @@ public interface UserDBMapper {
 	
 	@Update("update user_table set dir=#{fileDir} where id=#{userId};")
 	public boolean updateFileDirByUserId(@Param("fileDir") String fileDir, @Param("userId") int userId);
+	
+	
+	
+	@Results({
+		@Result(property="id",column="id",javaType=int.class,jdbcType=JdbcType.INTEGER),
+		@Result(property="school",column="school",javaType=String.class,jdbcType=JdbcType.VARCHAR),
+		@Result(property="score",column="score",javaType=int.class,jdbcType=JdbcType.INTEGER),
+		@Result(property="dir",column="dir",javaType=String.class,jdbcType=JdbcType.VARCHAR)
+		
+	})
+	@Select("SELECT score_table.id, school, dir, score from user_table  LEFT JOIN score_table ON user_table.id = score_table.schoolId AND score_table.teacherId = #{userId}  WHERE `group`= #{group} AND role = 2 ;")
+	public List<ScoreMessage> selectProjectMessageByGroupAndUser(@Param("group") int group, @Param("userId") int userId);
 }
