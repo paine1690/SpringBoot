@@ -60,10 +60,10 @@ public class UserDBService {
 	}
 	
 	
-	//新增一个账户,指定用户名、密码、备注、身份
-	public ResponseMessage addNewAccount(String userName, String password, String remark, int role){
+	//新增一个账户,指定用户名、密码、学校、身份
+	public ResponseMessage addNewAccount(String userName, String password, String school, int role){
 		ResponseMessage responseMessage = new ResponseMessage();
-		if(userDBMapper.addNewAccount(userName, password, remark, role)){
+		if(userDBMapper.addNewAccount(userName, password, school, role)){
 			responseMessage.setCode(ResponseCode.SUCCESS.ordinal()); 
 		}else{
 			responseMessage.setCode(ResponseCode.FAILED.ordinal()); 

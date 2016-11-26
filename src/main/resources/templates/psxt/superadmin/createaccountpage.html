@@ -8,6 +8,13 @@
 	<div style="padding: 100px 100px 10px;">
 		<form class="bs-example bs-example-form" role="form">
 		
+		
+			<div class="input-group">
+				<span class="input-group-addon">姓名</span>
+				<input id="school" style="width:400px;" type="text" class="form-control" placeholder="姓名"></input>
+			</div>
+			<br></br>
+		
 			<div class="input-group">
 				<span class="input-group-addon">用户名</span>
 				<input id="newUserName" style="width:400px;" type="text" class="form-control" placeholder="用户名"></input>
@@ -20,11 +27,7 @@
 			</div>
 			<br></br>
 			
-			<div class="input-group">
-				<span class="input-group-addon">备注</span>
-				<input id="remark" style="width:400px;" type="text" class="form-control" placeholder="备注"></input>
-			</div>
-			<br></br>
+
 			
 			<div class="input-group">
 				<button type="button"  class="btn btn-info" onclick="addNewAccount()">创建账号</button>
@@ -38,7 +41,7 @@
 	function addNewAccount(){
 		var userName = $("#newUserName").val();
 		var password1 = $("#password1").val();
-		var remark = $("#remark").val();
+		var school = $("#school").val();
 		//alert(userName+" "+password1+" "+remark);
 		if(!check()){
 			return;
@@ -46,7 +49,7 @@
 		var param={
 				userName:userName,
 				password:password1,
-				remark:remark,
+				school:school,
 		}
 		
 		$.ajax({
@@ -87,7 +90,7 @@
 	function clear(){
 		$("#newUserName").val("");
 		$("#password1").val("");
-		$("#remark").val("");
+		$("#school").val("");
 	}
 
 

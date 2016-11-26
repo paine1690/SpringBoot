@@ -75,9 +75,9 @@ public class AccountManageController {
 	//新增专家用户
 	@RequestMapping("/psxt/addNewTeacherAccount")
 	@ResponseBody
-	public ResponseMessage addNewTeacherAccount(@RequestParam String userName, @RequestParam String password, @RequestParam String remark) {
-		System.out.println("changeNameOrPassworORemark: "+userName+" "+password+" "+remark);
-		return accountManageHandler.addNewTeacherAccount(userName, password, remark);
+	public ResponseMessage addNewTeacherAccount(@RequestParam String userName, @RequestParam String password, @RequestParam String school) {
+		System.out.println("changeNameOrPassworORemark: "+userName+" "+password+" "+school);
+		return accountManageHandler.addNewTeacherAccount(userName, password, school);
 	}
 	
 }

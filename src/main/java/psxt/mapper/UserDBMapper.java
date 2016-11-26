@@ -48,9 +48,9 @@ public interface UserDBMapper {
 	public boolean changeNameOrPassworORSchool(@Param("id") int id,@Param("userName") String userName, @Param("password") String password, @Param("school") String school);
 	
 	
-	@Insert("INSERT INTO `user_table` (`userName`, `password`, `remark`, `role`) "
-			+ "VALUES (#{userName}, #{password}, #{remark}, #{role});")
-	public boolean addNewAccount(@Param("userName") String userName, @Param("password") String password, @Param("remark") String remark, @Param("role") int role);
+	@Insert("INSERT INTO `user_table` (`userName`, `password`, `school`, `role`) "
+			+ "VALUES (#{userName}, #{password}, #{school}, #{role});")
+	public boolean addNewAccount(@Param("userName") String userName, @Param("password") String password, @Param("school") String school, @Param("role") int role);
 	
 	@Select("SELECT * FROM user_table where id=#{userId};")
 	public User getUserById(@Param("userId") int userId) ;
