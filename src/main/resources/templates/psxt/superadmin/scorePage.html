@@ -1,0 +1,25 @@
+
+	<div>
+	<table id="scroeTable" class="table table-bordered">
+			  <caption>结果展示</caption>
+			  <thead>
+			    <tr>
+			      <th>分组</th>
+			      <th>学校</th>
+			      <th>评分人数</th>
+			      <th>平均分</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <tr id="3" v-for="result in scoreList" >
+			    	<td>{{result.group}}</td>
+			    	<td>{{result.school}}</td>			    	
+			    	<td>{{result.cnt}}</td>
+			    	<td>{{result.score}}</td>   
+			    </tr>
+			  </tbody>
+		</table>
+	</div>
+	
+<script>
+</script>

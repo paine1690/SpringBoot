@@ -1,4 +1,48 @@
 <div>
+ 	  <button  type="button" class="btn btn-success" onclick="getCreateaccountPage()">专家打分</button>
 
-dsafr
+	   <button type="button" class="btn btn-success" onclick="showScoreResult()">结果排名</button> 
+
+		 <div id="show">
+	   </div>
 </div>
+
+<script>
+	var scoreList = [ {
+		school : "school",
+		group : 'group',		
+		cnt : "cnt",
+		score : "score",
+	} ];
+	
+	function showScoreResult() {
+		$.ajax({
+			url : '/psxt/showScoreResult',
+			type : 'get',
+			dataType : 'text',
+			success : function(data) {
+				$("#show").html(data);
+				showScore = new Vue({
+					el : '#scroeTable',
+					data : {
+						scoreList : scoreList
+					},
+				});
+				showAllAccount();
+			}
+		});
+	}
+
+	function showAllAccount(){
+		$.ajax({
+			url : '/psxt/getAllScore',
+			type : 'get',
+			dataType : 'json',
+			success : function(data) {
+				showScore.scoreList = data;
+			}
+		});
+	}
+
+
+</script>
