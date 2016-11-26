@@ -55,7 +55,7 @@ function getProjectList(){
 		success:function(data){
 		//	if(judgeshowProject == null)
 		//	{
-				alert("@@@@@");
+//				alert("@@@@@");
 				judgeshowProject = new Vue({
 					el:'#projectTable',
 					data:{
