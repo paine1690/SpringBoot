@@ -88,5 +88,10 @@ public class SuperAdminPageController {
 		return "/psxt/superadmin/projectManage";
 	}
 	
+	@RequestMapping("/psxt/shownotGradePage")
+	public String shownotGradePage(){
+		return "/psxt/superadmin/notGradePagebyTeacher";
+	}
+	
 	
 }

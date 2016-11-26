@@ -19,7 +19,19 @@ function setAccountMangePage(){
 		}
 	});
 }
+//查看专家的评审进度，将未评审的学校显示出来
 
+function shownotGradePage(){
+	$.ajax({
+		url : '/psxt/shownotGradePage',
+		type : 'get',
+		dataType : 'text',
+		success : function(data) {
+			$("#contains").html(data);
+			
+		}
+	});
+}
 
 
 
