@@ -68,7 +68,9 @@ public class SuperAdminPageController {
 		return "/psxt/superadmin/teacherGroupPage";
 	}
 	
-
+	/*
+	 * 查看结果
+	 */
 	//获取查看结果页面
 	@RequestMapping("/psxt/showResultPage")
 	public String showResultPage(){
@@ -76,7 +78,11 @@ public class SuperAdminPageController {
 	}
 	
 	
-	
+	//获取查看结果排名页面
+	@RequestMapping("/psxt/showScoreResult")
+	public String showScoreResult(){
+		return "/psxt/superadmin/scorePage";
+	}
 	
 	@RequestMapping("/psxt/getaccountmanagepage")
 	public String getAccountManagePage(){

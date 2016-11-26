@@ -1,5 +1,7 @@
 package psxt.mapper;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Result;
@@ -25,4 +27,17 @@ public interface ScoreDBMapper {
 	
 	@Update("UPDATE score_table SET score= #{score} WHERE schoolId=#{schoolId} and teacherId=#{teacherId};")
 	public boolean updateScore(@Param("score") int score, @Param("schoolId") int schoolId, @Param("teacherId") int teacherId);
+	
+	@Results({
+		@Result(property="id",column="id",javaType=int.class,jdbcType=JdbcType.INTEGER),
+		@Result(property="schoolId",column="schoolId",javaType=Integer.class,jdbcType=JdbcType.INTEGER),
+		@Result(property="teacherId",column="teacherId",javaType=int.class,jdbcType=JdbcType.INTEGER),
+		@Result(property="score",column="score",javaType=Integer.class,jdbcType=JdbcType.INTEGER)
+	})
+	@Select("select * from score_table where schoolId=#{schoolId} ")
+	public List<Score> selectScoreBySchoolId(@Param("schoolId") int schoolId);
+	
+	
+	
+	
 }

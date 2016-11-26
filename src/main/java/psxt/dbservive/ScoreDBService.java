@@ -1,5 +1,7 @@
 package psxt.dbservive;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -51,4 +53,10 @@ public class ScoreDBService {
 		}
 		return responseMessage;
 	}
+	
+	//返回指定学校id的所有评分
+	public List<Score> getScoreOfSchool(int id){
+		return scoreDBMapper.selectScoreBySchoolId(id);
+	}
+	
 }
