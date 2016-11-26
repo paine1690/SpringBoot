@@ -62,12 +62,12 @@ public class AccountManageController {
 		return re;
 	}
 	
-	//修改账号用户名或密码或备注
-	@RequestMapping("/psxt/changeNameOrPassworORemark")
+	//修改账号用户名或密码或学校
+	@RequestMapping("/psxt/changeNameOrPassworORSchool")
 	@ResponseBody
-	public ResponseMessage changeNameOrPassworORemark(@RequestParam int id, @RequestParam String userName, @RequestParam String password, @RequestParam String remark) {
-		System.out.println("changeNameOrPassworORemark: "+id+" "+userName+" "+password+" "+remark);
-		ResponseMessage re=accountManageHandler.changeNameOrPassworORemark(id, userName, password, remark);
+	public ResponseMessage changeNameOrPassworORSchool(@RequestParam int id, @RequestParam String userName, @RequestParam String password, @RequestParam String school) {
+		System.out.println("changeNameOrPassworORSchool: "+id+" "+userName+" "+password+" "+school);
+		ResponseMessage re=accountManageHandler.changeNameOrPassworORSchool(id, userName, password, school);
 		return re;
 	}
 	

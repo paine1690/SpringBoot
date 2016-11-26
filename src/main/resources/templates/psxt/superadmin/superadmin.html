@@ -64,6 +64,11 @@
 
 					<a href="#" onclick="showGroupManagePage()" class="menu-button-middle">
 						<span class="glyphicon glyphicon-th-large">&nbsp;项目分配</span>
+					</a>
+					
+					
+					<a href="#" onclick="showResultPage()" class="menu-button-middle">
+						<span class="glyphicon glyphicon-th-large">&nbsp;查看结果</span>
 					</a>	
 				</div>
  	 		</div>
@@ -81,6 +86,20 @@
 
 
 <script>
+	//part4
+	function showResultPage(){
+		$.ajax({
+			url : '/psxt/showResultPage',
+			type : 'get',
+			dataType : 'text'w,
+			success : function(data) {
+				$("#contains").html(data);
+			}
+		});
+	}
+	
+	
+	
 	//part3
 	function showGroupManagePage(){
 		$.ajax({

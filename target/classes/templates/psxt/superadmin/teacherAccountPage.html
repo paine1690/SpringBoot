@@ -4,15 +4,19 @@
 	<thead>
 		<tr>
 			<th>id</th>
+			<th>姓名</th>
 			<th>用户名</th>
 			<th>密码</th>
-			<th>备注</th>
 			<th>修改</th>
 		</tr>
 	</thead>
 	<tbody>
 		<tr  v-for="user in userList">
 			<td>{{user.id}}</td>
+			<td>
+				<input type="text" class="form-control" id="school{{user.id}}" name="school" 	
+	     		value="{{user.school}}"/>
+	      	</td>
 			<td>
 	      		<input type="text" class="form-control" id="userName{{user.id}}" name="userName" 	
 	      		value="{{user.userName}}"/>
@@ -21,10 +25,7 @@
 	      		<input type="text" class="form-control" id="password{{user.id}}" name="password" 	
 	      		value="{{user.password}}"/>
 	      	</td>
-	      	<td>
-				<input type="text" class="form-control" id="remark{{user.id}}" name="remark" 	
-	     		value="{{user.remark}}"/>
-	      	</td>
+	      	
 			<td><button type="button" class="btn btn-warning" onclick="change({{user.id}})">修改</button></td>
 		</tr>
 	</tbody>
@@ -37,17 +38,17 @@ function change(i){
 	var id=i;
 	var userName=$("#userName"+i).val();
 	var password=$("#password"+i).val();
-	var remark=$("#remark"+i).val();
+	var school=$("#school"+i).val();
 	
 	var params={
 			id : id,
 			password : password,
     		userName : userName,
-    		remark: remark
+    		school: school
     }
 	//alert("id:"+i+" "+userName+" "+password);
     $.ajax({
-      url: '/psxt/changeNameOrPassworORemark',
+      url: '/psxt/changeNameOrPassworORSchool',
       type: 'post',
       dataType: 'json',
       data: params,

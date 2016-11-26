@@ -49,9 +49,9 @@ public class AccountManageHandler {
 		return userDBService.changeNameOrPassword(id, userName, password);
 	}
 	
-	//修改账号用户名或密码或备注
-	public ResponseMessage changeNameOrPassworORemark(int id, String userName, String password, String remark){
-		return userDBService.changeNameOrPassworORemark(id, userName, password, remark);
+	//修改账号用户名或密码或学校
+	public ResponseMessage changeNameOrPassworORSchool(int id, String userName, String password, String school){
+		return userDBService.changeNameOrPassworORSchool(id, userName, password, school);
 	}
 	
 	

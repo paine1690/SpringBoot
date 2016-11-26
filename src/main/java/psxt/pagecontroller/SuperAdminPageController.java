@@ -68,10 +68,12 @@ public class SuperAdminPageController {
 		return "/psxt/superadmin/teacherGroupPage";
 	}
 	
-	
-	
-	
-	
+
+	//获取查看结果页面
+	@RequestMapping("/psxt/showResultPage")
+	public String showResultPage(){
+		return "/psxt/superadmin/resultPage";
+	}
 	
 	
 	
