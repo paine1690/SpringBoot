@@ -30,7 +30,6 @@ public class AccountManageController {
 	@RequestMapping("/psxt/showAllSchoolGroup")
 	@ResponseBody
 	public List<User> showAllSchoolGroup() {
-		System.out.println("showAllSchoolGroup");
 		return accountManageHandler.getAllAccountByGroup(2);
 	}
 	
@@ -47,7 +46,6 @@ public class AccountManageController {
 	@RequestMapping("/psxt/showAllTeacherGroup")
 	@ResponseBody
 	public List<User> showAllTeacherGroup() {
-		System.out.println("showAllTeacherGroup");
 		return accountManageHandler.getAllAccountByGroup(3);
 	}
 	

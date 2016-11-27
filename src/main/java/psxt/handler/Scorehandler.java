@@ -55,9 +55,9 @@ public class Scorehandler {
 			re.add(temp);
 		}
 		
-		for(Result r: re){
-			System.out.println(r.getSchool()+" "+r.getGroup()+" "+r.getCnt()+" "+r.getScore());
-		}
+//		for(Result r: re){
+//			System.out.println(r.getSchool()+" "+r.getGroup()+" "+r.getCnt()+" "+r.getScore());
+//		}
 		Collections.sort(re, new Comparator<Result>(){
 			@Override
 			public int compare(Result r1, Result r2) {
