@@ -1,7 +1,7 @@
-
+结果展示
+	<div id="scoreDoc">
 	<div>
-	<table id="scroeTable" class="table table-bordered">
-			  <caption>结果展示</caption>
+	<table id="scroeTable" border="1" bordercolor="#000000" cellspacing="0" cellpadding="2" style="border-collapse:collapse;">
 			  <thead>
 			    <tr>
 			      <th>分组</th>
@@ -20,6 +20,33 @@
 			  </tbody>
 		</table>
 	</div>
+	</div>
+	<button  type="button" class="btn btn-success" onclick="exportResult()">结果导出</button>
+		
+	
 	
 <script>
+
+	function exportResult(){
+		var htmlContent = $("#scoreDoc").html();
+		alert(htmlContent);
+		$.ajax({
+			url:"/psxt/sendhtmlcontent",
+			type:"post",
+			dataType:'json',
+			data:{
+				htmlContent:htmlContent
+			},
+			success:function(data){
+				if(data.code==success){
+					alert(data.message);
+					window.location.href="getattachement?filePath="+data.message;
+				}else{
+					alert("message "+data.message+" code "+data.code);
+				}
+			}
+		});
+	}
+
+
 </script>
