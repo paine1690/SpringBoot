@@ -46,7 +46,7 @@ function updateProjectList(){
 }
 
 function getProjectList(){
-	console.log(123);
+//	console.log(123);
 	$.ajax({
 		url:'/psxt/getprojectlist',
 		type:'get',

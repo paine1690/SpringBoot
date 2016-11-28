@@ -1,3 +1,5 @@
+
+
 /*
  * 添加账户
  */
@@ -20,7 +22,7 @@ function setAccountMangePage(){
 	});
 }
 //查看专家的评审进度，将未评审的学校显示出来
-
+//跳转到页面shownotGradePage.html
 function shownotGradePage(){
 	$.ajax({
 		url : '/psxt/shownotGradePage',
@@ -28,9 +30,64 @@ function shownotGradePage(){
 		dataType : 'text',
 		success : function(data) {
 			$("#contains").html(data);
-			
+			updateGradePage();
 		}
 	});
+}
+//跳转到页面getnotGradePage.html
+function updateGradePage(){
+	$.ajax({
+		url : '/psxt/getnotGradePage',
+		type : 'get',
+		dataType : 'text',
+		success : function(data) {
+			$("#teacherGradeTable_div").html(data);//填充html
+			getTeacherGradeList();//填充数据
+		}
+	});
+}
+
+function getTeacherGradeList(){
+	var showTeacherGrade = null;
+
+	//显示的评审进度信息
+	var gradelist = [{
+		group : [],
+		unscore : [],
+		user : {
+			dir: null,
+			email: null,
+			group: 3,
+			id: 126,
+			password: "qe",
+			remark: "zhuanjia1",
+			role: 3,
+			school: "张三",
+			userName: "qe"
+		},
+	}]
+	$.ajax({
+		url:'/psxt/getTeacherGradelist',
+		type:'get',
+		dataType:'json',
+		success:function(data){
+//				alert("@@@@@");
+			showTeacherGrade = new Vue({
+					el:'#notGradeTable',
+					data:{
+						gradelist:gradelist/////////还没建！！！！！
+					}
+				});
+			
+//			for(var index in data){
+//				if(data[index]!=null &&data[index].dir !=null)
+//					data[index].attachmentId = "/getattachement/"+data[index].attachmentId;
+//			}
+			showTeacherGrade.gradelist = data;
+		//	alert("####");
+		}
+	})
+
 }
 
 

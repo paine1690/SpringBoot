@@ -14,8 +14,10 @@ public class TeacherAdminController {
 		return "/psxt/teacheradmin/judgeshowproject";
 	}
 	@RequestMapping("/psxt/gradeprojectpage")
-	public String getgradeprojectpage(){
+	public String getGradeProjectPage(){
 		return "/psxt/teacheradmin/gradedprojectpage";
 	}
+	
+
 	
 }

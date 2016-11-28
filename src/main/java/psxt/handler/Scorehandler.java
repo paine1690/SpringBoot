@@ -9,6 +9,8 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
+import javax.jws.soap.SOAPBinding.Use;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -16,6 +18,7 @@ import psxt.dbservive.UserDBService;
 import psxt.mapper.ScoreDBMapper;
 import psxt.mode.Result;
 import psxt.mode.Score;
+import psxt.mode.TeacherGrade;
 import psxt.mode.User;
 
 @Component
@@ -66,6 +69,62 @@ public class Scorehandler {
 			
 		});
 		return re;
+	}
+	
+	
+	
+	
+	/**
+	 * 获取每个专家的学校分组的评审情况
+	 * @return
+	 */
+	public List<TeacherGrade> getTeacherGradeList(){
+		List<User> teacherUsers = userDBService.getUsersByRole(3);
+		List<TeacherGrade> teacherGrades = new ArrayList<>();
+		
+		for(User user : teacherUsers){
+			TeacherGrade teacherGrade = new TeacherGrade();
+			teacherGrade.setUser(user);
+			List<User> schoolGroup = userDBService.getSchoolGroupOfTeacher(user.getGroup());
+			teacherGrade.setGroup(schoolGroup);
+			//获取专家评审过的所有学校分组
+			List<Integer> scoredSchoolIds = userDBService.getSchoolOfUnscoredByTeacher(user.getId());
+			//遍历一遍schoolGroup,将在schoolGroup不在unscoredSchoolIds中的学校存入到另一个list中
+			//首先将schoolGroup按照id字段进行排序
+			Collections.sort(schoolGroup, new Comparator<User>() {
+
+				@Override
+				public int compare(User o1, User o2) {
+					// TODO Auto-generated method stub
+					return o1.getId() - o2.getId();
+				}
+				
+			});
+			List<User> unscored = new ArrayList<>();
+			int j = 0;
+			if(scoredSchoolIds.size() == 0){
+				teacherGrade.setUnscore(schoolGroup);
+			}
+			else {
+				for(int i = 0; i< schoolGroup.size(); i++){
+					if(j < scoredSchoolIds.size()){
+						if(schoolGroup.get(i).getId() != scoredSchoolIds.get(j)){
+							unscored.add(schoolGroup.get(i));
+						}
+						else {
+							j++;
+						}
+					}
+					else {
+						unscored.add(schoolGroup.get(i));
+					}
+				}
+				teacherGrade.setUnscore(unscored);
+			}
+			teacherGrades.add(teacherGrade);
+		}
+		System.err.println(teacherGrades.size());
+		return teacherGrades;
 	}
 
 }
