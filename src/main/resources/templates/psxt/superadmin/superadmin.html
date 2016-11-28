@@ -37,7 +37,7 @@
 		            <span class="icon-bar"></span>
 		            <span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="/dcnh"><b>辽宁省创新创业示范高校评审系统</b></a>
+					<a class="navbar-brand" href="/psxt"><b>辽宁省创新创业示范高校评审系统</b></a>
 				</div>
 		        <div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right">
@@ -101,6 +101,9 @@
 			dataType : 'text',
 			success : function(data) {
 				$("#contains").html(data);
+			},
+			error : function(){
+				window.location.href = "/psxt";
 			}
 		});
 	}
@@ -115,6 +118,9 @@
 			dataType : 'text',
 			success : function(data) {
 				$("#contains").html(data);
+			},
+			error : function(){
+				window.location.href = "/psxt";
 			}
 		});
 	}
@@ -128,6 +134,9 @@
 			dataType : 'text',
 			success : function(data) {
 				$("#contains").html(data);
+			},
+			error : function(){
+				window.location.href = "/psxt";
 			}
 		});
 	}
@@ -148,7 +157,7 @@
 			url : '/psxt/getSchoolAccountPage',
 			type : 'get',
 			dataType : 'text',
-			success : function(data) {
+			success : function(data) {				
 				$("#contains").html(data);
 				showAccount = new Vue({
 					el : '#schoolAccountTable',
@@ -157,7 +166,10 @@
 					}
 				});
 				showAllAccountt();
-			}
+			},
+			error : function(){
+				window.location.href = "/psxt";
+			}	
 		});
 	}
 

@@ -1,12 +1,22 @@
 package psxt.pagecontroller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import psxt.globalInfo.SessionKey;
+import psxt.mode.User;
 
 @Controller
 public class SuperAdminPageController {
 	@RequestMapping("/psxt/superadmin")
-	public String getSuperAdminPage(){
+	public String getSuperAdminPage(HttpSession session){
+		
+		User user=(User) session.getAttribute(SessionKey.USERNAME.name());
+		if(user==null){
+			return "/psxt/login";
+		}
 		return "/psxt/superadmin/superadmin";
 	}
 	

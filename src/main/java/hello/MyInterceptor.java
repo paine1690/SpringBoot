@@ -13,13 +13,13 @@ public class MyInterceptor extends HandlerInterceptorAdapter {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
             throws Exception {
         System.out.println(">>>MyInterceptor>>>>>"+request.getRequestURI());
-        if(request.getRequestURI().equals("/psxt")||request.getRequestURI().equals("/psxt/login")){
+        if(request.getRequestURI().equals("/psxt")||request.getRequestURI().equals("/psxt/login")||request.getRequestURI().equals("/psxt/superadmin")){
         	return true;
         }
         
         User user = (User) request.getSession().getAttribute(SessionKey.USERNAME.name());
         if(user==null||user.getRole()==0){
-        	response.sendRedirect(request.getContextPath() + "/psxt");
+        	response.sendRedirect(request.getContextPath() + "/psxt302");
         	return false;
         }
         

@@ -34,6 +34,9 @@
 					},
 				});
 				showAllSchoolGroup();
+			},
+			error : function(){
+				window.location.href = "/psxt";
 			}
 		});
 	}
@@ -73,6 +76,9 @@
 					},
 				});
 				showAllTeacherGroup();
+			},
+			error : function(){
+				window.location.href = "/psxt";
 			}
 		});
 	}
@@ -97,6 +103,9 @@
 			dataType : 'text',
 			success : function(data) {
 				$("#show").html(data);
+			},
+			error : function(){
+				window.location.href = "/psxt";
 			}
 		});
 	}

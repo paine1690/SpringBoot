@@ -17,6 +17,9 @@
 			dataType : 'text',
 			success : function(data) {
 				$("#show").html(data);
+			},
+			error : function(){
+				window.location.href = "/psxt";
 			}
 		});
 	}
@@ -42,6 +45,9 @@
 					},
 				});
 				showAllAccount();
+			},
+			error : function(){
+				window.location.href = "/psxt";
 			}
 
 		});
