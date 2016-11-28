@@ -59,4 +59,9 @@ public class ScoreDBService {
 		return scoreDBMapper.selectScoreBySchoolId(id);
 	}
 	
+	//清除所有打分信息
+	public boolean deleteAllScore(){
+		return scoreDBMapper.deleteAllScore();
+	}
+	
 }
