@@ -2,6 +2,7 @@ package psxt.mapper;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Result;
@@ -37,7 +38,8 @@ public interface ScoreDBMapper {
 	@Select("select * from score_table where schoolId=#{schoolId} ")
 	public List<Score> selectScoreBySchoolId(@Param("schoolId") int schoolId);
 	
-	
-	
+	//清除所有打分信息
+	@Delete("truncate table psxt.score_table;")
+	public boolean deleteAllScore();
 	
 }

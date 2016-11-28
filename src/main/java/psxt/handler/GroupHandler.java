@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import psxt.dbservive.ScoreDBService;
 import psxt.dbservive.UserDBService;
 import psxt.globalInfo.ResponseCode;
 import psxt.mode.ResponseMessage;
@@ -18,6 +19,9 @@ public class GroupHandler {
 	
 	@Autowired
 	private UserDBService userDBService;
+	
+	@Autowired
+	private ScoreDBService scoreDBService;
 	
 	public ResponseMessage createGroup(String num){
 		ResponseMessage re=new ResponseMessage();
@@ -33,6 +37,8 @@ public class GroupHandler {
 				re.setMessage("分组太多，专家都不够用啦！");
 				return re;
 			}
+			scoreDBService.deleteAllScore();
+			
 			int cnt=0;
 			for(User u: schoolList){
 				int id=u.getId();
@@ -50,6 +56,7 @@ public class GroupHandler {
 					return re;
 				}
 			}
+				
 		}
 		return re;
 	}
