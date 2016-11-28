@@ -74,4 +74,20 @@ public interface UserDBMapper {
 	@Update("UPDATE `psxt`.`user_table` SET `group`=#{group} WHERE `id`=#{id};")
 	public boolean changeGroup(@Param("id") int id, @Param("group") int group);
 
+	@Results({
+		@Result(property="id",column="id",javaType=int.class,jdbcType=JdbcType.VARCHAR),
+		@Result(property="userName",column="username",javaType=String.class,jdbcType=JdbcType.VARCHAR),
+		@Result(property="school",column="school",javaType=String.class,jdbcType=JdbcType.VARCHAR),
+		@Result(property="role",column="role",javaType=int.class,jdbcType=JdbcType.VARCHAR),
+		@Result(property="group",column="group",javaType=Integer.class,jdbcType=JdbcType.INTEGER)
+		
+	})
+	@Select("SELECT * FROM user_table where `group`=#{group} AND role=2;")
+	public List<User> getSchoolGroupOfTeacher(@Param("group")int group);
+	
+	@Results({
+		@Result(property="schoolId",column="schoolId",javaType=int.class,jdbcType=JdbcType.INTEGER)
+	})
+	@Select("SELECT schoolId FROM score_table WHERE teacherId = #{teacherId} ORDER BY schoolId ASC;")
+	public List<Integer> getSchoolOfUnscoredByTeacher(@Param("teacherId")int teacherId);
 }

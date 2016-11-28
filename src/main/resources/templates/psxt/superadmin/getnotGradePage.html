@@ -1,0 +1,17 @@
+<table id="notGradeTable" class="table table-bordered">
+	<caption>评审进展</caption>
+	<thead>
+		<tr>
+			<th>专家</th>
+			<th>分配总数</th>
+			<th>未完成</th>
+		</tr>
+	</thead>
+	<tbody>
+	<tr v-for="grade in gradelist">
+	<td>{{grade.user.school}}</td>
+	<td>{{grade.group.length}}</td>
+	<td>{{grade.unscore.length}}</td>
+	</tr>
+	</tbody>
+</table>

@@ -106,7 +106,12 @@ public class SuperAdminPageController {
 	
 	@RequestMapping("/psxt/shownotGradePage")
 	public String shownotGradePage(){
-		return "/psxt/superadmin/notGradePagebyTeacher";
+		return "/psxt/superadmin/shownotGradePage";
+	}
+	
+	@RequestMapping("/psxt/getnotGradePage")
+	public String getnotGradePage(){
+		return "/psxt/superadmin/getnotGradePage";
 	}
 	
 	

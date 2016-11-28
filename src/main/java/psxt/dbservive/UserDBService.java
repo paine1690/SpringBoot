@@ -100,4 +100,21 @@ public class UserDBService {
 		return list;
 	}
 	
+	//获取一个组对应的所有学校信息
+	public List<User> getSchoolGroupOfTeacher(int groupId){
+		List<User> list;
+		list = userDBMapper.getSchoolGroupOfTeacher(groupId);
+		return list;
+	}
+	
+	/**
+	 * 返回一个专家已经评审过的学校的编号
+	 * @return
+	 */
+	public List<Integer> getSchoolOfUnscoredByTeacher(int teacherId){
+		List<Integer> list;
+		list = userDBMapper.getSchoolOfUnscoredByTeacher(teacherId);
+		return list;
+	}
+	
 }
