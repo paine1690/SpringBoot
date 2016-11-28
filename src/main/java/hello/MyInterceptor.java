@@ -13,7 +13,10 @@ public class MyInterceptor extends HandlerInterceptorAdapter {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
             throws Exception {
         System.out.println(">>>MyInterceptor>>>>>"+request.getRequestURI());
-        if(request.getRequestURI().equals("/psxt")||request.getRequestURI().equals("/psxt/login")||request.getRequestURI().equals("/psxt/superadmin")){
+        if(request.getRequestURI().equals("/psxt")||request.getRequestURI().equals("/psxt/login")
+        		||request.getRequestURI().equals("/psxt/superadmin")
+        		||request.getRequestURI().equals("/psxt/schooladmin")
+        		||request.getRequestURI().equals("/psxt/teacheradmin")){
         	return true;
         }
         

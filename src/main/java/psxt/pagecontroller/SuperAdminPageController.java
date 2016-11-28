@@ -12,7 +12,6 @@ import psxt.mode.User;
 public class SuperAdminPageController {
 	@RequestMapping("/psxt/superadmin")
 	public String getSuperAdminPage(HttpSession session){
-		
 		User user=(User) session.getAttribute(SessionKey.USERNAME.name());
 		if(user==null){
 			return "/psxt/login";
