@@ -1,26 +1,29 @@
+<br></br><br></br>
 结果展示
+<br></br><br></br>
 	<div id="scoreDoc">
 	<div>
 	<table id="scroeTable" border="1" bordercolor="#000000" cellspacing="0" cellpadding="2" style="border-collapse:collapse;">
 			  <thead>
 			    <tr>
-			      <th>分组</th>
-			      <th>学校</th>
-			      <th>评分人数</th>
-			      <th>平均分</th>
+			      <th width="100" align="center">分组</th>
+			      <th width="300" align="center">学校</th>
+			      <th width="100" align="center">评分人数</th>
+			      <th width="100" align="center">平均分</th>
 			    </tr>
 			  </thead>
 			  <tbody>
 			    <tr id="3" v-for="result in scoreList" >
-			    	<td>{{result.group}}</td>
-			    	<td>{{result.school}}</td>			    	
-			    	<td>{{result.cnt}}</td>
-			    	<td>{{result.score}}</td>   
+			    	<td width="100" align="center">{{result.group}}</td>
+			    	<td width="300" align="center">{{result.school}}</td>			    	
+			    	<td width="100" align="center">{{result.cnt}}</td>
+			    	<td width="100" align="center">{{result.score}}</td>   
 			    </tr>
 			  </tbody>
 		</table>
 	</div>
 	</div>
+	<br></br>
 	<button  type="button" class="btn btn-success" onclick="exportResult()">结果导出</button>
 		
 	
@@ -29,7 +32,6 @@
 
 	function exportResult(){
 		var htmlContent = $("#scoreDoc").html();
-		alert(htmlContent);
 		$.ajax({
 			url:"/psxt/sendhtmlcontent",
 			type:"post",
@@ -39,7 +41,6 @@
 			},
 			success:function(data){
 				if(data.code==success){
-					alert(data.message);
 					window.location.href="getattachement?filePath="+data.message;
 				}else{
 					alert("message "+data.message+" code "+data.code);

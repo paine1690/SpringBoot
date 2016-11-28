@@ -31,5 +31,12 @@ public class UserController {
 		User user = (User) session.getAttribute(SessionKey.USERNAME.name());
 		return user;
 	}
+	
+    @RequestMapping("/psxt/logout") 
+	public String logout(HttpSession session){
+		System.out.println("dsadgh");
+    	session.removeAttribute(SessionKey.USERNAME.name());
+    	return "/psxt/login"; 
+	}
 
 }

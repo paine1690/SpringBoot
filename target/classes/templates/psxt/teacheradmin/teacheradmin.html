@@ -47,7 +47,7 @@
 					<ul class="nav navbar-nav navbar-right">
 
 						<li><a id="userName" href="#"></a></li>
-						<li><a href="/logout">退出</a></li>
+						<li><a href="/psxt/logout">退出</a></li>
 					</ul>
 				</div>
 			</div>
@@ -101,7 +101,7 @@ var userId;
 		      dataType: 'json',
 		      success: function(data){
 		    	  userId = data.id;
-		    	  $("#userName").html(data.userName+" 欢迎您");
+		    	  $("#userName").html(data.school+" 欢迎您");
 		      }
 		    });
 		  //接着再触发评审项目
