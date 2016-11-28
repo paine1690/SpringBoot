@@ -53,7 +53,21 @@ function getTeacherGradeList(){
 	//显示的评审进度信息
 	var gradelist = [{
 		group : [],
-		unscore : [],
+		unscore :
+		[
+			{
+				dir: null,
+				email: null,
+				group: 3,
+				id: 126,
+				password: "qe",
+				remark: "zhuanjia1",
+				role: 3,
+				school: "张三",
+				userName: "qe"
+//				show : false
+			}
+       ],
 		user : {
 			dir: null,
 			email: null,
@@ -76,6 +90,11 @@ function getTeacherGradeList(){
 					el:'#notGradeTable',
 					data:{
 						gradelist:gradelist/////////还没建！！！！！
+					},
+					methods : {
+						change : function(){
+							
+						}
 					}
 				});
 			
@@ -90,6 +109,26 @@ function getTeacherGradeList(){
 
 }
 
+//切换css样式
+function change(node){
+//	var n1 = $(this).parent();
+//	var n2 = n1.parent();
+//	n2.$("ul").toggle();
+	var parent = node.parentNode;
+	var childs = parent.childNodes;
+	for(var i = 0; i < childs.length; i++){
+		if(childs[i].nodeName == "UL"){
+			var ul = childs[i];
+			if(ul.hasAttribute("hidden")){
+				ul.removeAttribute("hidden");
+			}
+			else{
+				ul.setAttribute("hidden","");
+			}
+		}
+	}
+	
+}
 
 
 
