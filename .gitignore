@@ -1,9 +1,3 @@
 /target/
-target/classes/META-INF/maven/PSXT/PSXT/pom.properties
-target/classes/META-INF/maven/PSXT/PSXT/pom.properties
-*.class
-*.class
-*.class
-target/classes/psxt/pagecontroller/SuperAdminPageController.class
-*.class
-*.js
+/target/*
+/target/classes/*
