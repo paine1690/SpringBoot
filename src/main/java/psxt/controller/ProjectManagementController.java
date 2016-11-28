@@ -98,8 +98,8 @@ public class ProjectManagementController {
 	/*
 	 * 上面代码太乱，我要和它划清界限
 	 */
-	@RequestMapping(value="/psxt/getattachement/{filePath}")
-	public ResponseEntity<InputStreamResource> getAttachement(@PathVariable String filePath,HttpServletRequest request,HttpServletResponse response) throws IOException{ 
+	@RequestMapping(value="/psxt/getattachement")
+	public ResponseEntity<InputStreamResource> getAttachement(@RequestParam String filePath,HttpServletRequest request,HttpServletResponse response) throws IOException{ 
 		System.out.println(filePath);
 		return attachementHandler.getFile(request, response, filePath);
 	}

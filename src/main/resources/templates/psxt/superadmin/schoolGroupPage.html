@@ -15,7 +15,7 @@
 		    	<td>{{user.group}}</td>
 		    	<td>{{user.school}}</td>
 		      	<td >
-		      		<a v-if="user.dir!=null" href="/psxt/getattachement/{{user.dir}}">附件</a>
+		      		<a v-if="user.dir!=null" href="/psxt/getattachement/?filePath={{user.dir}}">附件</a>
 		      		<span v-else="" >还未上传</span>
 		      	 </td>
 		    </tr>

@@ -19,7 +19,10 @@
 				      <td>{{project.school}}</td>
 				    
 				      <td>{{project.score}}</td>
-				      <td><a href="/psxt/getattachement/{{project.dir}}">附件</a></td>
+				      <td>
+				      	<a v-if="project.dir!=null" href="/psxt/getattachement/{{project.dir}}">附件</a>
+				      	<span v-else="" >还未上传</span>				      
+				      </td>
 				      <td><input id="score_{{project.id}}" 
 				 onkeyup="this.value=this.value.replace(/\D/g,'')"  onafterpaste="this.value=this.value.replace(/\D/g,'')" 
 				 type="text" class="form-control" placeholder="请打分，满分一百"></input></td>
