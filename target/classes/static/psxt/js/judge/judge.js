@@ -80,6 +80,10 @@ function getProjectList(){
 function grade(object){
 	var schoolId = $(object).attr("id");
 	var score = $("#"+"score_"+schoolId).val();
+	if(score.trim()==""){
+		alert("请输入数字");
+		return;
+	}
 	//alert("#### + "+score);
 	$.ajax({
 		url:"/psxt/addjudgement",
@@ -91,7 +95,7 @@ function grade(object){
 		},
 		success:function(response){
 			//if(response.)
-			alert(response.message);
+//			alert(response.message);
 			updateProjectList();
 		}
 	});

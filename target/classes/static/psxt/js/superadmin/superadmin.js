@@ -114,7 +114,8 @@ function change(node){
 //	var n1 = $(this).parent();
 //	var n2 = n1.parent();
 //	n2.$("ul").toggle();
-	var parent = node.parentNode;
+	//ok的
+	/*var parent = node.parentNode;
 	var childs = parent.childNodes;
 	for(var i = 0; i < childs.length; i++){
 		if(childs[i].nodeName == "UL"){
@@ -126,8 +127,18 @@ function change(node){
 				ul.setAttribute("hidden","");
 			}
 		}
+	}*/
+	//更简单的写法,html中的调用传参为$(this)
+	var ul = node.parent().children(":last");
+//这样也行
+	/*if(ul.attr("hidden")){
+		ul.removeAttr("hidden");
 	}
-	
+	else{
+		ul.attr("hidden","");
+	}*/
+	//最简单的
+	ul.toggle();
 }
 
 
