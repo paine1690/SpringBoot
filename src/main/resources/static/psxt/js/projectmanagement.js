@@ -19,19 +19,6 @@ function postNewProject() {
 		modalAlert("请上传附件！");
 		return;
 	}
-	
-	
-	//获取项目成员数组
-/*	var participatorsArray = [];
-	var i = 0;
-	for(var index in data) {
-		var formItem = data[index];
-		if(formItem.name == "participators")
-			participatorsArray[i++] = formItem.value;
-	}
-	*/
-//	console.log(participatorsArray);
-	
 	// 获取userID
 	console.log("userId:::" + userId);
 	
@@ -40,12 +27,6 @@ function postNewProject() {
 		type:"POST",
 		dataType:"json",
 		data:{
-//			category:$("#category").val(),
-//			subcategory:$("#subcategory").val(),
-//			school:$("#school").val(),
-//			teacher:$("#teacher").val(),
-//			prjct_title:$("#prjct_title").val(),
-//			participators:participatorsArray,
 			fileDir:$("#attachementId").val(),
 			userId : userId
 		},
