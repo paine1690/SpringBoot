@@ -7,6 +7,7 @@ encoding//src/main/resources/templates/psxt/schooladmin/addproject.html=UTF-8
 encoding//src/main/resources/templates/psxt/superadmin/getnotGradePage.html=UTF-8
 encoding//src/main/resources/templates/psxt/superadmin/shownotGradePage.html=UTF-8
 encoding//src/main/resources/templates/psxt/superadmin/teacherGroupPage.html=UTF-8
+encoding//src/main/resources/templates/psxt/superadmin/teachermanagePage.html=UTF-8
 encoding//src/main/resources/templates/psxt/teacheradmin/gradedprojectpage.html=UTF-8
 encoding//src/main/resources/templates/psxt/teacheradmin/judgeshowproject.html=UTF-8
 encoding//src/test/java=UTF-8

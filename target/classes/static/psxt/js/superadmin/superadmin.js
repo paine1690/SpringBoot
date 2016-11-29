@@ -56,26 +56,12 @@ function getTeacherGradeList(){
 		unscore :
 		[
 			{
-				dir: null,
-				email: null,
-				group: 3,
-				id: 126,
-				password: "qe",
-				remark: "zhuanjia1",
-				role: 3,
 				school: "张三",
 				userName: "qe"
 //				show : false
 			}
        ],
-		user : {
-			dir: null,
-			email: null,
-			group: 3,
-			id: 126,
-			password: "qe",
-			remark: "zhuanjia1",
-			role: 3,
+		teacherUser : {
 			school: "张三",
 			userName: "qe"
 		},
@@ -89,31 +75,19 @@ function getTeacherGradeList(){
 			showTeacherGrade = new Vue({
 					el:'#notGradeTable',
 					data:{
-						gradelist:gradelist/////////还没建！！！！！
+						gradelist:gradelist
 					},
-					methods : {
-						change : function(){
-							
-						}
-					}
 				});
 			
-//			for(var index in data){
-//				if(data[index]!=null &&data[index].dir !=null)
-//					data[index].attachmentId = "/getattachement/"+data[index].attachmentId;
-//			}
 			showTeacherGrade.gradelist = data;
-		//	alert("####");
 		}
 	})
 
 }
 
 //切换css样式
-function change(node){
-//	var n1 = $(this).parent();
-//	var n2 = n1.parent();
-//	n2.$("ul").toggle();
+function changeStyle(node){
+	console.log(node);
 	//ok的
 	/*var parent = node.parentNode;
 	var childs = parent.childNodes;
@@ -130,6 +104,7 @@ function change(node){
 	}*/
 	//更简单的写法,html中的调用传参为$(this)
 	var ul = node.parent().children(":last");
+	console.log("after");
 //这样也行
 	/*if(ul.attr("hidden")){
 		ul.removeAttr("hidden");

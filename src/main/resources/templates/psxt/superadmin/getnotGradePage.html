@@ -8,19 +8,13 @@
 		</tr>
 	</thead>
 	<tbody>
-	<tr v-for="grade in gradelist">
-	<td>{{grade.user.school}}</td>
-	<td>{{grade.group.length}}</td>
-	<td><a onclick = "change($(this));">{{grade.unscore.length}}</a>
-	<ul hidden="">
-	<li  v-for="school in grade.unscore">
-	{{school.school}}
-	
-	</li>
-	</ul>
-	
-	
-	</td>
-	</tr>
+		<tr v-for="grade in gradelist">
+			<td>{{grade.teacherUser.school}}</td>
+			<td>{{grade.group.length}}</td>
+			<td><a onclick="changeStyle($(this));">{{grade.unscore.length}}</a>
+				<ul hidden="">
+					<li v-for="school in grade.unscore">{{school.school}}</li>
+				</ul></td>
+		</tr>
 	</tbody>
 </table>

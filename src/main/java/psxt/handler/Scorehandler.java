@@ -84,7 +84,7 @@ public class Scorehandler {
 		
 		for(User user : teacherUsers){
 			TeacherGrade teacherGrade = new TeacherGrade();
-			teacherGrade.setUser(user);
+			teacherGrade.setTeacherUser(user);
 			List<User> schoolGroup = userDBService.getSchoolGroupOfTeacher(user.getGroup());
 			teacherGrade.setGroup(schoolGroup);
 			//获取专家评审过的所有学校分组
