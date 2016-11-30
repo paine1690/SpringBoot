@@ -31,7 +31,7 @@ public class ScoreController {
 	@RequestMapping("/psxt/getTeacherGradelist")
 	@ResponseBody
 	public List<TeacherGrade> getTeacherGradeList(){
-		System.out.println("*******controller");
+		//System.out.println("*******controller");
 		return scorehandler.getTeacherGradeList();
 	}
 }
