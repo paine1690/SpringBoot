@@ -24,7 +24,7 @@ body{
 	background-size: cover;
 }
 form{
-	 width: 65%;
+	width: 500px;
 	height: 300px;
 	margin: 0 auto; 
 }
@@ -40,13 +40,17 @@ form{
 	
 }
 .form-box{
-	margin-top: 50px;
-	width:50%;
+
+	width:80%;
 	margin: 0 auto;
+	margin-top: 20px;
 }
 
 footer{
-	margin: 0 auto;
+	/* margin: 0 auto; */
+	width:100%
+}
+footer p{
 	position: absolute;
 	bottom: 0;
 	text-align: center;
