@@ -34,9 +34,10 @@ function postNewProject() {
 			//清空，附件ID
 			$("#attachementId").val("");
 			if(data.code == 0) {
-				//alert(data.message);
+//				alert(data.message);
 				//重置表单
 				resetForm();
+				modalAlert('提交成功');
 			}	
 			else
 				alert(data.message);
