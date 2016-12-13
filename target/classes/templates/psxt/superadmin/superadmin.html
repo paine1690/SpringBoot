@@ -192,6 +192,11 @@
 			dataType : 'json',
 			success : function(data) {
 				$("#userName").html(data.school + " 欢迎您");
+				//user定义在superadmin.js里面
+				user.school = data.school;
+				user.password = data.password;
+				user.dir = data.dir;
+				user.username = data.userName;
 			}
 		});
 	}

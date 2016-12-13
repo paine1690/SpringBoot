@@ -19,4 +19,9 @@ public class SchoolAdminController {
 		return "/psxt/schooladmin/schooladmin";
 	}
 	
+	@RequestMapping("/psxt/getSchoolUserInfoPage")
+	public String getUserInfoPage(){
+		return "/psxt/schooladmin/schoolPersonInfo";
+	}
+	
 }

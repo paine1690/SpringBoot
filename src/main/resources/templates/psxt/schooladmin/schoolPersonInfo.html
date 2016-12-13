@@ -1,0 +1,37 @@
+<div id="personInfoPage" class="container">
+    <form role="form">
+        <h2>个人信息</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="input-group">
+                    <span class="input-group-addon">账户名4</span>
+                    <input type="text" readonly="true" :value="school" class="form-control" v-model="school" />
+                </div>
+            </div>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="input-group">
+                    <span class="input-group-addon">文件名</span>
+                    <input type="text" readonly="true" :value="dir" class="form-control" v-model="dir"/>
+                </div>
+            </div>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="input-group">
+                    <span class="input-group-addon">密码</span>
+                    <input type="text"  class="form-control" v-model="password"  id="changePassword"/>
+                </div>
+            </div>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="col-md-6">
+                <button type="button" class="btn btn-primary btn-block" id="submitInfo" >修改</button>
+            </div>
+        </div>
+    </form>
+</div>

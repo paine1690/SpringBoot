@@ -2,6 +2,14 @@
  * 获取管理员所分配的项目
  */
 var userId;
+var username;
+var user ={
+	school : '',
+	password :'',
+	dir : '',
+	username : ''
+};
+var userInfo = null;
 function onload(){
 		  $.ajax({
 		      url: '/psxt/getuserinfo',
@@ -9,8 +17,10 @@ function onload(){
 		      dataType: 'json',
 		      success: function(data){
 		    	  $("#userName").html(data.school+" 欢迎您");
+				  console.log(data);
 		    	  getaddProjectPage();
 		    	  userId=data.id;
+				  username = data.userName;
 		      }
 		    });
 		}
@@ -94,6 +104,77 @@ function addProject() {
 	function removeAddProjectPage() {
 		$("#add_prjct_container").html("");
 	}
+	
+	//个人信息
+$(function () {
+	$("#schoolPersonalInfo").click(function () {
+		getSchoolInfoPage();
+	});
+});
+//请求到用户信息页面
+function getSchoolInfoPage(){
+$.ajax({
+	url : '/psxt/getSchoolUserInfoPage',
+	type : 'get',
+	dataType : 'text',
+	success : function (data) {
+		$("#contains").html(data);
+		//提交修改绑定事件
+		$("#submitInfo").click(function () {
+			changeInfo();
+		})
+		//填写用户信息，账户名，文件名，密码
+		getSchoolInfo();
+	}
+})
+}
+//加载用户信息,根据用户id，获取其他信息
+function getSchoolInfo() {
+	var params = {
+		userName : username
+	}
+	$.ajax({
+		url: '/psxt/getUserInfoByUsername',
+		type: 'post',
+		dataType: 'json',
+		data: params,
+		success: function (msg) {
+			userInfo = new Vue({
+				el : "#personInfoPage",
+				data : {
+					school : msg.school,
+					dir : msg.dir,
+					password : msg.password,
+					username : msg.userName
+				},
+
+			})
+		},
+		error: function(){
+			alert(arguments[1]);
+		}
+	});
+}
+//个人信息，“修改”事件
+function changeInfo(){
+	var params = {
+		id : userId,
+		password :$("#changePassword").val(),
+		userName : userInfo.username
+
+	}
+	$.ajax({
+		url: '/psxt/changeNameOrPassword',
+		type: 'post',
+		dataType: 'json',
+		data: params,
+		success: modalAlert("修改成功"),
+		error: function(){
+			alert(arguments[1]);
+		}
+	});
+}
+
 
 
 

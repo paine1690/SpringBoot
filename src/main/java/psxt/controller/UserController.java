@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import psxt.globalInfo.SessionKey;
+import psxt.handler.AccountManageHandler;
 import psxt.handler.LoginHandler;
 import psxt.mode.ResponseMessage;
 import psxt.mode.User;
@@ -18,6 +19,9 @@ public class UserController {
     
 	@Autowired
 	private LoginHandler loginHandler;
+	
+	@Autowired
+	private AccountManageHandler accountManageHandler;
 	
     @RequestMapping("/psxt/login") 
     @ResponseBody
@@ -32,6 +36,13 @@ public class UserController {
 		return user;
 	}
 	
+	@RequestMapping("/psxt/getUserInfoByUsername")
+	@ResponseBody
+	public User getUserByUsername(@RequestParam String userName) {
+		System.err.println(userName);
+		User user = accountManageHandler.getUserByUsername(userName);
+		return user;
+	}
     @RequestMapping("/psxt/logout") 
 	public String logout(HttpSession session){
     	session.removeAttribute(SessionKey.USERNAME.name());

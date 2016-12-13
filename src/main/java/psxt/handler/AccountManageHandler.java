@@ -59,4 +59,9 @@ public class AccountManageHandler {
 	public ResponseMessage addNewTeacherAccount(String userName, String password, String school){
 		return userDBService.addNewAccount(userName, password, school, 3);		
 	}
+	
+	//根据username获取User
+	public User getUserByUsername(String userName){
+		return userDBService.getUserByUserName(userName);
+	}
 }

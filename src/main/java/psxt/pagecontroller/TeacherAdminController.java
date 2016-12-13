@@ -27,6 +27,11 @@ public class TeacherAdminController {
 		return "/psxt/teacheradmin/gradedprojectpage";
 	}
 	
+	@RequestMapping("/psxt/getTeacherUserInfoPage")
+	public String getUserInfoPage(){
+		return "/psxt/teacheradmin/TeacherPersonInfo";
+	}
+	
 
 	
 }

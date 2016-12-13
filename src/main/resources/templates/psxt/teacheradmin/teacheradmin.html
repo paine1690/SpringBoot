@@ -63,9 +63,9 @@
 						 <a href="#" onclick="getproject()"
 							class="menu-button-middle"> <span
 							class="glyphicon glyphicon-th-large">&nbsp;查看项目</span>
-						</a> <a href="#" onclick="showProjectManagepage()"
+						</a> <a href="#"
 							class="menu-button-middle"> <span
-							class="glyphicon glyphicon-th-large">&nbsp;个人信息</span>
+							class="glyphicon glyphicon-th-large" id="teacherPersonalInfo">&nbsp;个人信息</span>
 						</a>
 
 						<!-- <a href="#" class="menu-button-middle" onclick="getResultSettingPage()">
@@ -94,6 +94,7 @@
 </body>
 <script>
 var userId;
+var username;
 	function onload(){
 		  $.ajax({
 		      url: '/psxt/getuserinfo',
@@ -101,6 +102,7 @@ var userId;
 		      dataType: 'json',
 		      success: function(data){
 		    	  userId = data.id;
+				  username = data.userName;
 		    	  $("#userName").html(data.school+" 欢迎您");
 		      }
 		    });
