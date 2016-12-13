@@ -84,7 +84,8 @@ function addProject() {
 		} );
 		$("#attachement_file").on("fileuploaderror", function(event, data, msg) {
 			$("#attachementId").val("");
-			modalAlert(msg);
+			modalAlert("附件上传失败！请检测文件大小");
+			resetForm();
 		} );
 	}
 	
