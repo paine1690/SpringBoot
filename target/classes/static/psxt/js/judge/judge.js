@@ -84,6 +84,7 @@ function grade(object){
 		alert("请输入数字");
 		return;
 	}
+
 	//alert("#### + "+score);
 	$.ajax({
 		url:"/psxt/addjudgement",
@@ -94,9 +95,13 @@ function grade(object){
 			score:score
 		},
 		success:function(response){
-			//if(response.)
-//			alert(response.message);
-			updateProjectList();
+			if(response.code == "0"){    		
+				alert("评分成功");
+				updateProjectList();
+			}
+			else if(response.code == "1"){
+				alert(response.message);
+			}
 		}
 	});
 }
