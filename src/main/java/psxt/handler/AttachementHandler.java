@@ -32,7 +32,7 @@ public class AttachementHandler {
 		private Environment env;
 		
 	    public ResponseEntity<InputStreamResource> getFile( HttpServletRequest request,HttpServletResponse response,String filePath) throws IOException{
-	    	String path = "E://"+filePath;
+	    	String path = env.getProperty("rootPath")+filePath;
 	    	System.out.println("####### path %%%%% "+path);
 	    	FileSystemResource file=new FileSystemResource(path);
 	    	if(!file.exists()){
