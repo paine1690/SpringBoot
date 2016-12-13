@@ -2,32 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="edfdeff7-6004-442c-a1eb-5a4d47648083" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/psxt/js/schooladmin/userInfo.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/templates/psxt/schooladmin/schoolPersonInfo.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/templates/psxt/teacheradmin/TeacherPersonInfo.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/psxt/controller/UserController.class" afterPath="$PROJECT_DIR$/target/classes/psxt/controller/UserController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/psxt/dbservive/UserDBService.class" afterPath="$PROJECT_DIR$/target/classes/psxt/dbservive/UserDBService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/psxt/handler/AccountManageHandler.class" afterPath="$PROJECT_DIR$/target/classes/psxt/handler/AccountManageHandler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/psxt/pagecontroller/SchoolAdminController.class" afterPath="$PROJECT_DIR$/target/classes/psxt/pagecontroller/SchoolAdminController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/psxt/pagecontroller/TeacherAdminController.class" afterPath="$PROJECT_DIR$/target/classes/psxt/pagecontroller/TeacherAdminController.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/psxt/css/userInfo.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.settings/org.eclipse.core.resources.prefs" afterPath="$PROJECT_DIR$/.settings/org.eclipse.core.resources.prefs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/psxt/controller/UserController.java" afterPath="$PROJECT_DIR$/src/main/java/psxt/controller/UserController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/psxt/handler/AccountManageHandler.java" afterPath="$PROJECT_DIR$/src/main/java/psxt/handler/AccountManageHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/psxt/pagecontroller/SchoolAdminController.java" afterPath="$PROJECT_DIR$/src/main/java/psxt/pagecontroller/SchoolAdminController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/psxt/pagecontroller/TeacherAdminController.java" afterPath="$PROJECT_DIR$/src/main/java/psxt/pagecontroller/TeacherAdminController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/psxt/js/accountManage.js" afterPath="$PROJECT_DIR$/src/main/resources/static/psxt/js/accountManage.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/psxt/js/schooladmin/schooladmin.js" afterPath="$PROJECT_DIR$/src/main/resources/static/psxt/js/schooladmin/schooladmin.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/psxt/js/superadmin/superadmin.js" afterPath="$PROJECT_DIR$/src/main/resources/static/psxt/js/superadmin/superadmin.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/psxt/projectmanagment/add_project.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/psxt/projectmanagment/add_project.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/psxt/schooladmin/schoolPersonInfo.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/psxt/schooladmin/schoolPersonInfo.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/psxt/schooladmin/schooladmin.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/psxt/schooladmin/schooladmin.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/psxt/superadmin/superadmin.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/psxt/superadmin/superadmin.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/psxt/teacheradmin/TeacherPersonInfo.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/psxt/teacheradmin/TeacherPersonInfo.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/psxt/teacheradmin/teacheradmin.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/psxt/teacheradmin/teacheradmin.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/target/classes/META-INF/MANIFEST.MF" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/META-INF/maven/PSXT/PSXT/pom.properties" afterPath="$PROJECT_DIR$/target/classes/META-INF/maven/PSXT/PSXT/pom.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/static/psxt/js/schooladmin/schooladmin.js" afterPath="$PROJECT_DIR$/target/classes/static/psxt/js/schooladmin/schooladmin.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/static/psxt/js/superadmin/superadmin.js" afterPath="$PROJECT_DIR$/target/classes/static/psxt/js/superadmin/superadmin.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/templates/psxt/schooladmin/schooladmin.html" afterPath="$PROJECT_DIR$/target/classes/templates/psxt/schooladmin/schooladmin.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/templates/psxt/superadmin/superadmin.html" afterPath="$PROJECT_DIR$/target/classes/templates/psxt/superadmin/superadmin.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/templates/psxt/teacheradmin/teacheradmin.html" afterPath="$PROJECT_DIR$/target/classes/templates/psxt/teacheradmin/teacheradmin.html" />
     </list>
     <ignored path="SprngBoot.iws" />
@@ -51,24 +35,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="schooladmin.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="schooladmin.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/psxt/js/schooladmin/schooladmin.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="891">
-              <caret line="96" column="5" selection-start-line="91" selection-start-column="4" selection-end-line="96" selection-end-column="5" />
+            <state relative-caret-position="198">
+              <caret line="87" column="24" selection-start-line="87" selection-start-column="24" selection-end-line="87" selection-end-column="24" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="schoolPersonInfo.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/psxt/schooladmin/schoolPersonInfo.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -83,31 +57,77 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="schoolPersonInfo.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/psxt/schooladmin/schoolPersonInfo.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="528">
+              <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
+              <folding>
+                <element signature="e#936#942#0" expanded="true" />
+                <element signature="e#942#948#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="userInfo.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/psxt/css/userInfo.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="teacheradmin.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/psxt/teacheradmin/teacheradmin.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="429">
-              <caret line="67" column="88" selection-start-line="67" selection-start-column="69" selection-end-line="67" selection-end-column="88" />
+            <state relative-caret-position="462">
+              <caret line="20" column="49" selection-start-line="20" selection-start-column="49" selection-end-line="20" selection-end-column="49" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="accountManage.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="accountManage.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/psxt/js/accountManage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="708">
-              <caret line="151" column="3" selection-start-line="146" selection-start-column="0" selection-end-line="151" selection-end-column="3" />
+            <state relative-caret-position="2721">
+              <caret line="143" column="7" selection-start-line="143" selection-start-column="7" selection-end-line="143" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="createaccountpage.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/psxt/superadmin/createaccountpage.html">
+      <file leaf-file-name="TeacherPersonInfo.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/psxt/teacheradmin/TeacherPersonInfo.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="349">
+              <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+              <folding>
+                <element signature="e#595#601#0" expanded="true" />
+                <element signature="e#601#607#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="add_project.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/psxt/projectmanagment/add_project.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="627">
+              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="projectmanagement.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/psxt/js/projectmanagement.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="94">
+              <caret line="38" column="28" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -116,28 +136,8 @@
       <file leaf-file-name="schooladmin.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/psxt/schooladmin/schooladmin.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="22" column="49" selection-start-line="22" selection-start-column="49" selection-end-line="22" selection-end-column="49" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="superadmin.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/static/psxt/js/superadmin/superadmin.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="361" column="19" selection-start-line="361" selection-start-column="19" selection-end-line="361" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="superadmin.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/psxt/superadmin/superadmin.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1336">
-              <caret line="195" column="42" selection-start-line="195" selection-start-column="42" selection-end-line="195" selection-end-column="42" />
+            <state relative-caret-position="528">
+              <caret line="16" column="30" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -150,6 +150,7 @@
       <list>
         <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -161,16 +162,19 @@
       <list>
         <option value="$PROJECT_DIR$/src/main/resources/static/psxt/css/login.css" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/psxt/login.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/psxt/schooladmin/schooladmin.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/psxt/js/schooladmin/userInfo.js" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/psxt/superadmin/superadmin.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/psxt/schooladmin/personInfo.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/psxt/js/superadmin/superadmin.js" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/psxt/teacheradmin/teacheradmin.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/psxt/schooladmin/schoolPersonInfo.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/psxt/teacheradmin/personInfo.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/psxt/js/schooladmin/schooladmin.js" />
         <option value="$PROJECT_DIR$/src/main/resources/static/psxt/js/accountManage.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/psxt/schooladmin/schoolPersonInfo.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/psxt/schooladmin/schooladmin.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/psxt/teacheradmin/teacheradmin.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/psxt/css/userInfo.css" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/psxt/teacheradmin/TeacherPersonInfo.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/psxt/projectmanagment/add_project.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/psxt/js/schooladmin/schooladmin.js" />
       </list>
     </option>
   </component>
@@ -371,6 +375,40 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="psxt" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="projectmanagment" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SprngBoot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SprngBoot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="static" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -532,6 +570,40 @@
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="psxt" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SprngBoot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SprngBoot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
@@ -546,6 +618,7 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="js-jscs-nodeInterpreter" value="D:\Software\node.js\node.exe" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -618,12 +691,12 @@
       <option name="presentableId" value="Default" />
       <updated>1480474202621</updated>
       <workItem from="1480474203995" duration="7651000" />
-      <workItem from="1481597155422" duration="18970000" />
+      <workItem from="1481597155422" duration="21775000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26621000" />
+    <option name="totallyTimeSpent" value="29426000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="0" width="1938" height="1050" extended-state="0" />
@@ -746,14 +819,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/psxt/js/schooladmin/userInfo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="33">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/psxt/superadmin/superadmin.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1336">
@@ -766,14 +831,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1881">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/psxt/schooladmin/schooladmin.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="22" column="49" selection-start-line="22" selection-start-column="49" selection-end-line="22" selection-end-column="49" />
           <folding />
         </state>
       </provider>
@@ -794,14 +851,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/psxt/schooladmin/schoolPersonInfo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/psxt/teacheradmin/personInfo.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="481">
@@ -810,29 +859,91 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/psxt/schooladmin/schoolPersonInfo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
+          <folding>
+            <element signature="e#936#942#0" expanded="true" />
+            <element signature="e#942#948#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/psxt/schooladmin/schooladmin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="16" column="30" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/psxt/teacheradmin/teacheradmin.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="67" column="88" selection-start-line="67" selection-start-column="69" selection-end-line="67" selection-end-column="88" />
+        <state relative-caret-position="462">
+          <caret line="20" column="49" selection-start-line="20" selection-start-column="49" selection-end-line="20" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/psxt/teacheradmin/TeacherPersonInfo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+          <folding>
+            <element signature="e#595#601#0" expanded="true" />
+            <element signature="e#601#607#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/psxt/projectmanagment/add_project.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="627">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/psxt/js/schooladmin/userInfo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="33">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/psxt/js/projectmanagement.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="94">
+          <caret line="38" column="28" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/psxt/js/accountManage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2721">
+          <caret line="143" column="7" selection-start-line="143" selection-start-column="7" selection-end-line="143" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/psxt/css/userInfo.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/psxt/js/schooladmin/schooladmin.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="891">
-          <caret line="96" column="5" selection-start-line="91" selection-start-column="4" selection-end-line="96" selection-end-column="5" />
+        <state relative-caret-position="198">
+          <caret line="87" column="24" selection-start-line="87" selection-start-column="24" selection-end-line="87" selection-end-column="24" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/psxt/js/accountManage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="708">
-          <caret line="151" column="3" selection-start-line="146" selection-start-column="0" selection-end-line="151" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
