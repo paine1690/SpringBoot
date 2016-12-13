@@ -1,6 +1,7 @@
 /*
  * 获取管理员所分配的项目
  */
+var userId;
 function onload(){
 		  $.ajax({
 		      url: '/psxt/getuserinfo',
@@ -9,6 +10,7 @@ function onload(){
 		      success: function(data){
 		    	  $("#userName").html(data.school+" 欢迎您");
 		    	  getaddProjectPage();
+		    	  userId=data.id;
 		      }
 		    });
 		}
@@ -89,7 +91,9 @@ function addProject() {
 		console.log($("#mform").serializeArray());
 		$("#attachement_file").fileinput("upload");
 	}
-	
+	function removeAddProjectPage() {
+		$("#add_prjct_container").html("");
+	}
 
 
 
