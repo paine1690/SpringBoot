@@ -20,7 +20,7 @@
 				    
 				      <td>{{project.score}}</td>
 				      <td>
-				      	<a v-if="project.dir!=null" href="/psxt/getattachement/{{project.dir}}">附件</a>
+				      	<a v-if="project.dir!=null" href="/psxt/getattachement/?filePath={{project.dir}}">附件</a>
 				      	<span v-else="" >还未上传</span>				      
 				      </td>
 				      <td><input id="score_{{project.id}}" 
