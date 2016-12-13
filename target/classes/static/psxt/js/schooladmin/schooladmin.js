@@ -17,7 +17,6 @@ function onload(){
 		      dataType: 'json',
 		      success: function(data){
 		    	  $("#userName").html(data.school+" 欢迎您");
-				  console.log(data);
 		    	  getaddProjectPage();
 		    	  userId=data.id;
 				  username = data.userName;
@@ -49,7 +48,7 @@ function addProject() {
 			type : 'get',
 			dataType : 'text',
 			success : function(data) {	
-				console.log(22);
+//				console.log(22);
 				$("#add_prjct_container").html(data);
 				$("#attachement_file").fileinput({
 					language : 'zh',
@@ -91,7 +90,7 @@ function addProject() {
 	
 
 	function modalAlert(str) {
-		console.log($("#alertModal"));
+//		console.log($("#alertModal"));
 		$("#alertModal").modal("hide");
 		$("#alertContent").html(str);
 		$("#alertModal").modal("show");

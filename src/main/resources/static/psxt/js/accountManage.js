@@ -79,7 +79,7 @@ $(function () {
 
 //请求到用户信息页面
 function getInfoPage(){
-	console.log(2233);
+//	console.log(2233);
 	$.ajax({
 		url : '/psxt/getTeacherUserInfoPage',
 		type : 'get',
