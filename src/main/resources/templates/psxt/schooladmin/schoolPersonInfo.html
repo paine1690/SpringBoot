@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="input-group">
-                    <span class="input-group-addon">账户名4</span>
+                    <span class="input-group-addon">账户名</span>
                     <input type="text" readonly="true" :value="school" class="form-control" v-model="school" />
                 </div>
             </div>
@@ -13,8 +13,9 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="input-group">
-                    <span class="input-group-addon">文件名</span>
-                    <input type="text" readonly="true" :value="dir" class="form-control" v-model="dir"/>
+                    <span class="input-group-addon">文件</span>
+                    <a class="form-control" v-if="dir!=null" href="/psxt/getattachement/?filePath={{dir}}">附件</a>
+		      		<span class="form-control" v-else="" >还未上传</span>
                 </div>
             </div>
         </div>
