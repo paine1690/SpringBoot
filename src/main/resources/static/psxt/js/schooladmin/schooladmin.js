@@ -86,6 +86,7 @@ function addProject() {
 			modalAlert("附件上传失败！请检测文件大小");
 			resetForm();
 		} );
+		
 	}
 	
 
