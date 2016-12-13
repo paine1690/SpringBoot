@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 
 import psxt.dbservive.ScoreDBService;
 import psxt.dbservive.UserDBService;
+import psxt.globalInfo.ResponseCode;
 import psxt.mode.ResponseMessage;
 import psxt.mode.Score;
 import psxt.mode.ScoreMessage;
@@ -45,6 +46,11 @@ public class ProjectManageHandler {
 	 */
 	public ResponseMessage updateJudgement(int teacherId, int schoolId, int score){
 		ResponseMessage responseMessage = new ResponseMessage();
+		if(score<0||score>100){			
+			responseMessage.setCode(ResponseCode.FAILED.ordinal());
+			responseMessage.setMessage("满分100！");
+			return responseMessage;
+		}
 		//先查找，能不能找到，不能，插入；能，更新
 		if(scoreDBService.getScore(schoolId, teacherId)){
 			//更新
@@ -57,6 +63,7 @@ public class ProjectManageHandler {
 			newScore.setTeacherId(teacherId);
 			scoreDBService.inserScoreMessage(newScore);
 		}
+		responseMessage.setCode(ResponseCode.SUCCESS.ordinal());
 		return responseMessage;
 	}
 }
