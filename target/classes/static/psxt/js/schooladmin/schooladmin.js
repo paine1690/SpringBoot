@@ -13,6 +13,7 @@ var userInfo = null;
 function onload(){
 		  $.ajax({
 		      url: '/psxt/getuserinfo',
+		      cache:false,
 		      type: 'get',
 		      dataType: 'json',
 		      success: function(data){
@@ -28,6 +29,7 @@ function getaddProjectPage(){
 //	console.log(1234);
 	$.ajax({
 		  url: '/psxt/getaddprojectbutton',
+		  cache:false,
 	      type: 'get',
 	      dataType: 'text',
 	      success: function(data){
@@ -45,6 +47,7 @@ function addProject() {
 	//	console.log(111);
 		$.ajax({
 			url : '/psxt/getaddprjctpage',
+			cache:false,
 			type : 'get',
 			dataType : 'text',
 			success : function(data) {	
@@ -116,6 +119,7 @@ $(function () {
 function getSchoolInfoPage(){
 $.ajax({
 	url : '/psxt/getSchoolUserInfoPage',
+	cache:false,
 	type : 'get',
 	dataType : 'text',
 	success : function (data) {
@@ -136,6 +140,7 @@ function getSchoolInfo() {
 	}
 	$.ajax({
 		url: '/psxt/getUserInfoByUsername',
+		cache:false,
 		type: 'post',
 		dataType: 'json',
 		data: params,
@@ -166,6 +171,7 @@ function changeInfo(){
 	}
 	$.ajax({
 		url: '/psxt/changeNameOrPassword',
+		cache:false,
 		type: 'post',
 		dataType: 'json',
 		data: params,

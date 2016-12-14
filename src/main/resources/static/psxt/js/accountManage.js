@@ -82,6 +82,7 @@ function getInfoPage(){
 //	console.log(2233);
 	$.ajax({
 		url : '/psxt/getTeacherUserInfoPage',
+		cache:false,
 		type : 'get',
 		dataType : 'text',
 		success : function (data) {
@@ -102,6 +103,7 @@ function getInfo() {
 	}
 	$.ajax({
 		url: '/psxt/getUserInfoByUsername',
+		cache:false,
 		type: 'post',
 		dataType: 'json',
 		data: params,
@@ -132,6 +134,7 @@ function changeInfo(){
 	}
 	$.ajax({
 		url: '/psxt/changeNameOrPassword',
+		cache:false,
 		type: 'post',
 		dataType: 'json',
 		data: params,

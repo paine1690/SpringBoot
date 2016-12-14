@@ -99,6 +99,7 @@ var username;
 	function onload(){
 		  $.ajax({
 		      url: '/psxt/getuserinfo',
+		      cache:false,
 		      type: 'get',
 		      dataType: 'json',
 		      success: function(data){

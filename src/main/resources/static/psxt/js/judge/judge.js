@@ -21,6 +21,7 @@ function getproject(){
 	var kind = 0;
 	$.ajax({
 		url : '/psxt/judgeshowproject',
+		cache:false,
 		type : 'get',
 		dataType : 'text',
 		success : function(data) {
@@ -33,6 +34,7 @@ function getproject(){
 function updateProjectList(){
 		$.ajax({
 			url:'/psxt/gradeprojectpage',
+			cache:false,
 			type:'get',
 			dataType:'text',
 			success:function(data){
@@ -49,6 +51,7 @@ function getProjectList(){
 //	console.log(123);
 	$.ajax({
 		url:'/psxt/getprojectlist',
+		cache:false,
 		type:'get',
 		dataType:'json',
 		//获取所有项目!!!!!!!!!!
@@ -88,6 +91,7 @@ function grade(object){
 	//alert("#### + "+score);
 	$.ajax({
 		url:"/psxt/addjudgement",
+		cache:false,
 		type:"post",
 		dataType:"json",
 		data:{
